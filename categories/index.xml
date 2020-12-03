@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Q3yi&#39;s Cyberspace</title>
+    <link>https://q3yi.me/categories/</link>
+    <description>Recent content in Categories on Q3yi&#39;s Cyberspace</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 03 Dec 2020 20:31:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://q3yi.me/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://q3yi.me/categories/%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Thu, 03 Dec 2020 20:31:20 +0800</pubDate>
+      
+      <guid>https://q3yi.me/categories/%E6%9D%82%E8%B0%88/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
