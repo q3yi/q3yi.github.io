@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Q3yi&#39;s Cyberspace</title>
-    <link>https://q3yi.me/posts/</link>
-    <description>Recent content in Posts on Q3yi&#39;s Cyberspace</description>
+    <title>computer on Q3yi&#39;s Cyberspace</title>
+    <link>https://q3yi.me/categories/computer/</link>
+    <description>Recent content in computer on Q3yi&#39;s Cyberspace</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 06 Dec 2020 20:38:24 +0800</lastBuildDate>
     
-	<atom:link href="https://q3yi.me/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://q3yi.me/categories/computer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://q3yi.me/posts/build-blog-with-orgmode-hugo-and-github-pages/</guid>
       <description>主要内容 上篇说到我重新搭建起自己的博客，这篇讲讲目前写文章使用的工具以及主要 使用到的工具。 等等，上篇才说到术和道的关系，咋现在又开始捣鼓起写</description>
-    </item>
-    
-    <item>
-      <title>重新搭建个人博客</title>
-      <link>https://q3yi.me/posts/rebulid-my-personal-blog-site/</link>
-      <pubDate>Thu, 03 Dec 2020 20:31:20 +0800</pubDate>
-      
-      <guid>https://q3yi.me/posts/rebulid-my-personal-blog-site/</guid>
-      <description>为什么要搭博客？ 说来惭愧，其实很早之前，可能是Github Pages刚开始的时候，我就试着用 Jekyll搭建过自己的博客。但是结果就是捣鼓了</description>
     </item>
     
   </channel>
