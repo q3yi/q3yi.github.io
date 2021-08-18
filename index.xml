@@ -6,7 +6,16 @@
     <description>Recent content on Q3YI - Cyberspace </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 06 Dec 2020 20:38:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Mar 2021 22:31:50 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>经济学综合笔记</title>
+      <link>http://localhost:1313/post/3_economic-notes/</link>
+      <pubDate>Thu, 18 Mar 2021 22:31:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/3_economic-notes/</guid>
+      <description>Why？ 因为一直都对经济学有点儿兴趣，作为一个IT行业的从业者，很多人会觉得科学 技术是第一生产力，盲目的相信技术可以让世界变的更好，却很少关</description>
+    </item>
+    
     <item>
       <title>使用orgmode&#43;hugo&#43;github pages搭建博客</title>
       <link>http://localhost:1313/post/build-blog-with-orgmode-hugo-and-github-pages/</link>
