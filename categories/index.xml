@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Q3yi&#39;s Cyberspace</title>
-    <link>https://q3yi.me/categories/</link>
-    <description>Recent content in Categories on Q3yi&#39;s Cyberspace</description>
+    <title>Categories on Q3YI - Cyberspace </title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Q3YI - Cyberspace </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 06 Dec 2020 20:38:24 +0800</lastBuildDate>
-    
-	<atom:link href="https://q3yi.me/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Dec 2020 20:38:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>computer</title>
-      <link>https://q3yi.me/categories/computer/</link>
+      <link>http://localhost:1313/categories/computer/</link>
       <pubDate>Sun, 06 Dec 2020 20:38:24 +0800</pubDate>
       
-      <guid>https://q3yi.me/categories/computer/</guid>
+      <guid>http://localhost:1313/categories/computer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>杂谈</title>
-      <link>https://q3yi.me/categories/%E6%9D%82%E8%B0%88/</link>
+      <link>http://localhost:1313/categories/%E6%9D%82%E8%B0%88/</link>
       <pubDate>Thu, 03 Dec 2020 20:31:20 +0800</pubDate>
       
-      <guid>https://q3yi.me/categories/%E6%9D%82%E8%B0%88/</guid>
+      <guid>http://localhost:1313/categories/%E6%9D%82%E8%B0%88/</guid>
       <description></description>
     </item>
     

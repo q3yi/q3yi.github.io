@@ -1,75 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://q3yi.me/categories/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/categories/computer/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/categories/computer/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/emacs/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/tags/emacs/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/github/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/tags/github/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/hugo/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/orgmode/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/tags/orgmode/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/posts/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/posts/build-blog-with-orgmode-hugo-and-github-pages/</loc>
-    <lastmod>2020-12-06T20:38:24+08:00</lastmod>
+    <loc>http://localhost:1313/post/build-blog-with-orgmode-hugo-and-github-pages/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/%E6%83%B3%E6%B3%95/</loc>
-    <lastmod>2020-12-03T20:31:20+08:00</lastmod>
+    <loc>http://localhost:1313/tags/%E6%83%B3%E6%B3%95/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/tags/%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2020-12-03T20:31:20+08:00</lastmod>
+    <loc>http://localhost:1313/tags/%E6%9D%82%E8%B0%88/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/categories/%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2020-12-03T20:31:20+08:00</lastmod>
+    <loc>http://localhost:1313/categories/%E6%9D%82%E8%B0%88/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://q3yi.me/posts/rebulid-my-personal-blog-site/</loc>
-    <lastmod>2020-12-03T20:31:20+08:00</lastmod>
+    <loc>http://localhost:1313/post/rebulid-my-personal-blog-site/</loc>
+    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
