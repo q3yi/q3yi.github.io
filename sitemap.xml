@@ -3,77 +3,112 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/economics/</loc>
-    <lastmod>2021-03-18T22:31:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/economics/</loc>
-    <lastmod>2021-03-18T22:31:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/learn/</loc>
-    <lastmod>2021-03-18T22:31:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/notes/</loc>
-    <lastmod>2021-03-18T22:31:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/3_economic-notes/</loc>
-    <lastmod>2021-03-18T22:31:50+08:00</lastmod>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/computer/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/elisp/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/emacs/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/latex/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/orgmode/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/xelatex/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/</loc>
+    <lastmod>2021-12-16T23:39:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/economics/</loc>
+    <lastmod>2021-08-18T22:35:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/economics/</loc>
+    <lastmod>2021-08-18T22:35:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/learn/</loc>
+    <lastmod>2021-08-18T22:35:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/notes/</loc>
+    <lastmod>2021-08-18T22:35:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/3_economic-notes/</loc>
+    <lastmod>2021-08-18T22:35:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -87,13 +122,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2021-08-18T21:32:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/orgmode/</loc>
     <lastmod>2021-08-18T21:32:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
