@@ -6,7 +6,16 @@
     <description>Recent content in emacs on Q3YI - Cyberspace </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Dec 2021 23:39:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 11:24:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs中英文对齐的设置</title>
+      <link>http://localhost:1313/post/5_set_different_font_family_for_sc_in_emacs/</link>
+      <pubDate>Sat, 18 Dec 2021 11:24:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/5_set_different_font_family_for_sc_in_emacs/</guid>
+      <description>前言 emacs中的中英文对齐对于稍微有点强迫症的人来说算是个可以折腾的人直挠头 的问题了，特别是当你使用 org-mode ，并且在文章中添加表格的时候。在不 做</description>
+    </item>
+    
     <item>
       <title>解决org-mode中LaTeX数学公式中的中文渲染问题</title>
       <link>http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/</link>

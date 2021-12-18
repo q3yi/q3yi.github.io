@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2021-12-16T23:39:30+08:00" />
+<meta property="article:modified_time" content="2021-12-18T11:27:03+08:00" />
 
 <meta itemprop="name" content="解决org-mode中LaTeX数学公式中的中文渲染问题">
 <meta itemprop="description" content="历史遗留问题 我喜欢用 org-mode 来记笔记和写文章，而不是用 markdown 的一个原因是 org-mode 对 \(\LaTeX\) 的支持更友好，可以直接使用 $\LaTex$ 这种方式 直接输入，也可以直接使用 \begin{cases}\end{cases} 这种方式来">
-<meta itemprop="dateModified" content="2021-12-16T23:39:30+08:00" />
-<meta itemprop="wordCount" content="2506">
+<meta itemprop="dateModified" content="2021-12-18T11:27:03+08:00" />
+<meta itemprop="wordCount" content="2499">
 <meta itemprop="keywords" content="emacs,orgmode,latex,xelatex,elisp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="解决org-mode中LaTeX数学公式中的中文渲染问题"/>
 <meta name="twitter:description" content="历史遗留问题 我喜欢用 org-mode 来记笔记和写文章，而不是用 markdown 的一个原因是 org-mode 对 \(\LaTeX\) 的支持更友好，可以直接使用 $\LaTex$ 这种方式 直接输入，也可以直接使用 \begin{cases}\end{cases} 这种方式来"/>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/computer/"> computer </a>
             </div>
-          <span class="more-meta"> 约 2506 字 </span>
-          <span class="more-meta"> 预计阅读 6 分钟 </span>
+          <span class="more-meta"> 约 2499 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
     </header>
@@ -184,7 +184,7 @@
 <figure><img src="/images/4_use_xelatex/bug.gif"/>
 </figure>
 
-<p>WTF？这是什么情况？ $\LaTeX$难道不支持中文？我又试着使用 <code>org-export</code>
+<p>WTF？这是什么情况？ \(\LaTeX\) 难道不支持中文？我又试着使用 <code>org-export</code>
 将整个文档输出成PDF看看情况，好家伙，全是失败，不支持中文实锤了。经过
 一番查证，最后确定问题出现在 <code>org-mode</code> 默认使用的是 <code>pdflatex</code> 来生成
 最终文档，不支持中文的。解决方案是将默认的使用的compiler切换到了
@@ -426,8 +426,8 @@ sudo tlmgr install xifthen
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-12-16
-        
+        2021-12-18
+        <a href="https://github.com/tsingyi/tsingyi.git/commit/f88d592bcf833872910df3e3221334be1bd8c1ec" title="new article: use different font-family in emacs.">(f88d592)</a>
     </span>
   </p>
   
@@ -445,7 +445,11 @@ sudo tlmgr install xifthen
           <a href="/tags/elisp/">elisp</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/5_set_different_font_family_for_sc_in_emacs/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Emacs中英文对齐的设置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/3_economic-notes/">
             <span class="next-text nav-default">经济学综合笔记</span>
             <span class="next-text nav-mobile">下一篇</span>
