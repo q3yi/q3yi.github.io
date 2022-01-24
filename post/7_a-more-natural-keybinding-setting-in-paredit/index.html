@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>让paredit的编辑快捷键更符合直觉 - Q3YI - Cyberspace </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Qing Yi" /><meta name="description" content="什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹" /><meta name="keywords" content="Blog, Computer, Economics" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="让paredit的编辑快捷键更符合直觉" />
+<meta property="og:description" content="什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2022-01-24T16:46:44+08:00" />
+
+<meta itemprop="name" content="让paredit的编辑快捷键更符合直觉">
+<meta itemprop="description" content="什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹">
+<meta itemprop="dateModified" content="2022-01-24T16:46:44+08:00" />
+<meta itemprop="wordCount" content="2920">
+<meta itemprop="keywords" content="paredit,lisp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="让paredit的编辑快捷键更符合直觉"/>
+<meta name="twitter:description" content="什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I, Q3yi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Posts</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I, Q3yi</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">让paredit的编辑快捷键更符合直觉</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-01-24 </span>
+        <div class="post-category">
+            <a href="/categories/emacs/"> emacs </a>
+            </div>
+          <span class="more-meta"> 约 2920 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是paredit">什么是paredit？</a>
+          <ul>
+            <li><a href="#非强制的建议性的补齐插件">非强制的建议性的补齐插件</a></li>
+            <li><a href="#强制要求所有括号匹配的插件">强制要求所有括号匹配的插件</a></li>
+          </ul>
+        </li>
+        <li><a href="#lisp类语言编程对s-exp常用的操作">lisp类语言编程对S-exp常用的操作</a></li>
+        <li><a href="#paredit的默认按键绑定">paredit的默认按键绑定</a></li>
+        <li><a href="#基于control-meta和十字键的绑定">基于control，meta和十字键的绑定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="什么是paredit">什么是paredit？</h2>
+<p>刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨，
+经常写着写着不小心删除了一个 <code>)</code> 就导致不匹配，如果光标还在删除的位置
+还好，要是不小心碰到了触控板导致光标移动到了别的地方，那可能就要仔细找
+找才能找到原来的位置了。这种情况频率不高还好，还有种更困扰的情景是写了
+一大段代码，代码中间的逻辑可能改了好几次，终于满意了，需要最后把没有写
+完的 <code>)</code> 补完，这时候就一个一个小心又小心的注意不能写少也不能写多了。
+第二种情景不止会在lisp类的语言中遇到，任何需要括号来确定作用域的语言其
+实都会有这个问题，比如golang中的 <code>{}</code> ，只是遇到的频率小很多。</p>
+<p>为了解决这个问题，我们一般都需要借助于结构化的编辑插件，结构化的编辑插
+件可以分成两个类型。</p>
+<h3 id="非强制的建议性的补齐插件">非强制的建议性的补齐插件</h3>
+<p>这是一般的编辑器现在普遍存在的功能，在你输入 <code>&quot;</code>, <code>(</code>, <code>{</code> 之后自动补
+齐 <code>&quot;</code>, <code>)</code>, <code>}</code> 之类的符号， emacs 24之后提供的 <code>electric-pair-mode</code>
+就是这样的实现。这中状态下用户可以任意删除 <code>&quot;</code>, <code>()</code>, <code>{}</code> 等字符，文
+档中可能出现括号不匹配的状态，需要用户自己去修改。</p>
+<h3 id="强制要求所有括号匹配的插件">强制要求所有括号匹配的插件</h3>
+<p>类似 <code>paredit</code>, <code>lispy</code>, <code>smartparens-strict-mode</code> 的插件，要求在任何
+时候括号都必须匹配，如果要删除则需要一对同时删除。着保证了我们不需要再
+担心括号匹配的问题，但会对文档的修改造成一定的限制。</p>
+<p><code>paredit</code> 应该算是 <code>emacs</code> 上这类插件的鼻祖的了， <code>smartparens</code> 和
+<code>lispy</code> 都是借鉴了 <code>paredit</code> 之后增加了一些新功能。我最开始使用的是
+<code>smartparens</code> 但是并没有使用强制的模式，使用一段时间过后，其实感觉差别
+不大，很多功能都没有用到，这样就显得提供的功能太多了。于是我切换到了功
+能更加纯粹的 <code>paredit</code> 来编辑lisp类的代码，而其它模式下使用emacs自带的
+<code>electric-pair-mode</code> 就完全满足需求了。</p>
+<h2 id="lisp类语言编程对s-exp常用的操作">lisp类语言编程对S-exp常用的操作</h2>
+<p>在使用强制括号匹配的插件之后，之前某些通过现删除后括号增加些内容，再添
+加后括号的操作是被禁止的，因为会导致括号不匹配。所以需要一些同时修改前
+后括号的操作来完成编辑动作。总结下来在一般的编辑过程中，会频繁的使用下
+面提到的四种操作。</p>
+<ol>
+<li>
+<p>Unwrap, 相当于解包，把一对括号中的内容拿到外面来。我们可以通过下面
+的例子来说明， <code>|</code> 代表光标所在位置， <code>---&gt;</code> 上代表操作之前的状态，
+下代表操作结束后的状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo (bar| baz) quux)
+  ---&gt;
+(foo bar| baz quux)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Wrap，和Unwrap对应，相当于封包，把内容封装到一对括号当中，同样使用
+例子来展示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo |bar baz)
+  ---&gt;
+(foo (|bar) baz)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Slurp, 吃进来，向前或向后扩张当前括号的范围，把括号的前一个或者后一
+个元素吃到当前的括号当中来。</p>
+<ul>
+<li>向后吞并元素</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo (bar |baz) quux zot)
+  ---&gt;
+(foo (bar |baz quux) zot)
+
+(a b ((c| d)) e f)
+  ---&gt;
+(a b ((c| d) e) f)
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>向前吞并元素</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo bar (baz| quux) zot)
+  ---&gt;
+(foo (bar baz| quux) zot)
+
+(a b ((c| d)) e f)
+  ---&gt;
+(a (b (c| d)) e f)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Barf, 吐出去，向前或者向后吐出括号内最近的内容，相当于缩小当前的括
+号范围。</p>
+<ul>
+<li>向后吐出元素</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo (bar |baz quux) zot)
+  ---&gt;
+(foo (bar |baz) quux zot)
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>向前吐出元素</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">(foo (bar baz |quux) zot)
+  ---&gt;
+(foo bar (baz |quux) zot)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="paredit的默认按键绑定">paredit的默认按键绑定</h2>
+<p>针对上面常用的四种操作，paredit中都有对应的函数，并且绑定特定的快捷键，
+但是使用一段时间我发现这些快捷键的设计缺乏合理的设计隐喻，所以需要死记
+硬背才能熟练，而且如果一段时间没有使用就多半会忘记，重新用又要再重新记
+忆一遍，而偏偏我还是个记忆不算好的人，十分的别扭。我们来说说默认的快捷
+键和存在的问题。</p>
+<ol>
+<li>
+<p>Unwarp，对应的快捷键为 <code>M-s</code>, 对应的函数为 <code>paredit-splice-sexp</code> 可
+以看出这个快捷键的设置完全是根据函数名来设置的，但是对于我来说我和
+作者对于这一操作的命名不一样，作者认为是把S-exp劈开，我认为这个行为
+更像是把S-exp拿出来，因为在对这个S-exp <code>(foo|)</code> 使用是产生的结果是
+<code>foo|</code>, <code>(foo bar |baz quux)</code> 产生的结果是 <code>foo bar |baz quux</code> ，这
+两种情况下都很难理解splice的语义，我认为unwrap的描述更准确。这就导
+致我在使用这个命令时需要转换，我想做一个我认为是unwrap的操作，需要
+想到用的函数是splice，所以快捷键是 <code>M-s</code> 。</p>
+</li>
+<li>
+<p>Wrap，对应的快捷键为 <code>M-(</code> ，对应的函数为 <code>paredit-wrap-round</code> ，看
+起来没什么问题，用括号包起来嘛。但在使用中会有两个不好的点，第一，
+<code>(</code> 是需要按住shift才能打出的符号，也就是说我实际是要按三个按键；第
+二，如果我的光标在这个位置 <code>bar|</code> 快捷键确实 <code>(</code> ，这里也存在着隐喻
+的转换， /当然如果你实际在这个位置使用这个命令，目前的paredit会是这样
+的结果 <code>bar ()</code> / 。另外还有一个问题就是这个命名和unwrap是有对应关
+系的，当在快捷键的设计上缺完全没有考虑，造成了更多的记忆负担。</p>
+</li>
+<li>
+<p>Barf &amp; Slurp，这两个动作实际对应了四个操作，paredit在这四个操作的快
+捷键设计上我认为作者是有思考的，有自己的逻辑，原有的键位设置比起一
+些paredit的设置分享上改为 <code>M-{</code>, <code>M-[</code> 之类的好上非常多，我不是很理
+解那些设置分享的人是通过怎样的模型来记忆这几个操作的。</p>
+<p>在默认的设置中，作者是按照操作的位置来区分的 <code>C</code> 键代表操作右边的括
+号：</p>
+<ul>
+<li>
+<p><code>C-&lt;right&gt;</code> 就是向后吞元素，右边括号继续往右移动，调用的函数为
+<code>paredit-forward-slurp-sexp</code> , 非常直观，这也是我没有调整之前记得
+最清楚的操作，有时候其它操作都要转化成这个操作来完成。</p>
+</li>
+<li>
+<p><code>C-&lt;left&gt;</code> 同样操作右边括号，向后吐出元素，右边括号向左边移动，调
+用函数 <code>paredit-forward-barf-sexp</code> , 注意这里有个点是函数名里有个
+forward，但我们的括号实际在往左边移动，这是barf的语义造成的问题，
+在我们使用快捷键，不用想函数名时不会有困扰。</p>
+</li>
+</ul>
+<p>然后默认设置中 <code>C-M</code> 键代表了操作左括号：</p>
+<ul>
+<li>
+<p><code>C-M-&lt;left&gt;</code> 就是向前吞并元素，左边的括号继续往左移动，调用的函数
+为 <code>paredit-backward-slurp-sexp</code> 。</p>
+</li>
+<li>
+<p><code>C-M-&lt;right&gt;</code> 就是向前吐出元素，左边的括号向右边移动，调用函数
+<code>paredit-backward-barf-sexp</code> 。</p>
+</li>
+</ul>
+<p>我认为Barf &amp; Slurp这组快捷键是作者经过精心设计的，比较的直观并且有
+自己的操作逻辑，比起un/wrap的键位设计好很多，也更容易记住。但是我不
+满意的点在于，我直觉上更倾向于把slurp的操作看作一组，barf的操作看做
+另外一组，而不是把针对左括号的操作看作一组，针对右括号的操作看作一
+组。在实际操作中，左右括号的位置也会随着操作发生改变，虽然和方向键
+的方向一致，但是还是会有中模型的原点在不断移动的感觉。另外在emacs中，
+<code>C</code> 和 <code>C-M</code> 代表同一层级的操作对象也不符合emacs的直觉，举个例子是
+<code>C-f</code> 移动一个字符， <code>M-f</code> 移动一个单词， <code>C-M-f</code> 移动一个sexp，之
+间是有层级关系的模型存在。</p>
+</li>
+</ol>
+<h2 id="基于control-meta和十字键的绑定">基于control，meta和十字键的绑定</h2>
+<p>说完了默认绑定的键位问题，来说说我的改进方案。</p>
+<p>首先把unwrap &amp; wrap这两个操作看做一组，分别绑定为unwrap: <code>M-&lt;up&gt;</code>,
+wrap: <code>M-&lt;down&gt;</code> 。可以理解为wrap就是向下把sexp放到括号这个盒子里，
+uwrap就是向上把sexp从括号这个盒子里拿出来。</p>
+<p>其次把slurp的操作看作一组，把barf的操作看作另一组，而放弃绑定到左右括
+号上。</p>
+<p>Slurp的操作全部绑定到 <code>C</code> 上，要吞掉后面的元素，使用 <code>C-&lt;right&gt;</code> 。
+<code>C</code> 表示吞，方向指向要吞掉元素。同理向前吞就使用 <code>C-&lt;left&gt;</code> 。</p>
+<p>Barf的操作全部绑定到 <code>M</code> 上，要吐掉后面的元素，使用 <code>M-&lt;right&gt;</code> , <code>M</code>
+表示吐，方向指向要吐出的元素。同理向前吐就使用 <code>M-&lt;left&gt;</code> 。这里的操作
+方向和括号的移动方向是相反的，但是我们的心理模型并不是绑定到括号的移动
+方向上，可以这么立即，吐出去肚子会变小，所以括号会往里缩紧。</p>
+<p>下面是调整完后的配置代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">paredit</span>
+  <span class="nb">:delight</span> <span class="s">&#34; Par&#34;</span>
+  <span class="nb">:bind</span>
+  <span class="p">(</span><span class="nb">:map</span> <span class="nv">paredit-mode-map</span>
+	<span class="p">(</span><span class="s">&#34;M-&lt;up&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-splice-sexp</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">&#34;M-&lt;down&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-wrap-round</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">&#34;C-&lt;right&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-forward-slurp-sexp</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">&#34;C-&lt;left&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-backward-slurp-sexp</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">&#34;M-&lt;left&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-backward-barf-sexp</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">&#34;M-&lt;right&gt;&#34;</span> <span class="o">.</span> <span class="nv">paredit-forward-barf-sexp</span><span class="p">))</span>
+  <span class="nb">:hook</span> <span class="p">((</span><span class="nv">emacs-lisp-mode</span> <span class="o">.</span> <span class="nv">paredit-mode</span><span class="p">)</span>
+	 <span class="p">(</span><span class="nv">scheme-mode</span> <span class="o">.</span> <span class="nv">paredit-mode</span><span class="p">))</span>
+  <span class="nb">:config</span>
+  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">paredit-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;M-s&#34;</span><span class="p">)</span> <span class="no">nil</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">paredit-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;M-?&#34;</span><span class="p">)</span> <span class="no">nil</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Qing Yi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-01-24
+        <a href="https://github.com/tsingyi/tsingyi.git/commit/e7615c2a8cb617ad427967149723c3518fbac1ef" title="New article about paredit.">(e7615c2)</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/paredit/">paredit</a>
+          <a href="/tags/lisp/">lisp</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/5_set_different_font_family_for_sc_in_emacs/">
+            <span class="next-text nav-default">Emacs中英文对齐的设置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'q3yi-me';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:qingyi.tss@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tsingyi" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/26207551" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>qingyi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-70VM4N1550', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on Q3YI - Cyberspace </title>
+    <link>http://localhost:1313/categories/emacs/</link>
+    <description>Recent content in emacs on Q3YI - Cyberspace </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Jan 2022 16:41:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让paredit的编辑快捷键更符合直觉</title>
+      <link>http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/</link>
+      <pubDate>Mon, 24 Jan 2022 16:41:54 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/</guid>
+      <description>什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹</description>
+    </item>
+    
+  </channel>
+</rss>
