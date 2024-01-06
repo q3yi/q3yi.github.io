@@ -6,24 +6,21 @@
     <description>Recent content in orgmode on Q3YI - Cyberspace </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Dec 2021 23:39:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Dec 2021 23:39:30 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>解决org-mode中LaTeX数学公式中的中文渲染问题</title>
+      <title>解决 org-mode 中 LaTeX 数学公式中的中文渲染问题</title>
       <link>http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/</link>
       <pubDate>Thu, 16 Dec 2021 23:39:30 +0800</pubDate>
-      
       <guid>http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/</guid>
-      <description>历史遗留问题 我喜欢用 org-mode 来记笔记和写文章，而不是用 markdown 的一个原因是 org-mode 对 \(\LaTeX\) 的支持更友好，可以直接使用 $\LaTex$ 这种方式 直接输入，也可以直接使用 \begin{cases}\end{cases} 这种方式来</description>
+      <description>历史遗留问题 我喜欢用 org-mode 来记笔记和写文章，而不是用 markdown 的一个原因是 org-mode 对 \(\LaTeX\) 的支持更友好，可以直接使用 $\LaTex$ 这种方式直接输入，也可以直接使用 \begin{cases}\end{cases} 这种方式来</description>
     </item>
-    
     <item>
-      <title>使用orgmode&#43;hugo&#43;github pages搭建博客</title>
-      <link>http://localhost:1313/post/build-blog-with-orgmode-hugo-and-github-pages/</link>
+      <title>使用 orgmode, hugo, github pages 搭建博客</title>
+      <link>http://localhost:1313/post/2_build-blog-with-orgmode-hugo-and-github-pages/</link>
       <pubDate>Sun, 06 Dec 2020 20:38:24 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/build-blog-with-orgmode-hugo-and-github-pages/</guid>
-      <description>主要内容 上篇说到我重新搭建起自己的博客，这篇讲讲目前写文章使用的工具以及主要 使用到的工具。 等等，上篇才说到术和道的关系，咋现在又开始捣鼓起写</description>
+      <guid>http://localhost:1313/post/2_build-blog-with-orgmode-hugo-and-github-pages/</guid>
+      <description>上篇说到我重新搭建起自己的博客，这篇讲讲目前写文章使用的工具以及主要使用到的工具。 等等，上篇才说到术和道的关系，咋现在又开始捣鼓起写博客的工</description>
     </item>
-    
   </channel>
 </rss>

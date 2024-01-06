@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Q3YI - Cyberspace </title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in windows on Q3YI - Cyberspace </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Jan 2024 16:46:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 11 开机端口随机被占用的原因及修复办法</title>
+      <link>http://localhost:1313/post/8_fix_windows_excluded_port_problem/</link>
+      <pubDate>Sat, 06 Jan 2024 16:46:00 +0800</pubDate>
+      <guid>http://localhost:1313/post/8_fix_windows_excluded_port_problem/</guid>
+      <description>奇怪的问题 在用 Windows 的时候遇到一个特别烦躁的 bug，有些需要绑定端口的程序老是启动不了，比如 Clash，Wezterm，查询程序的启动日志，发现</description>
+    </item>
+  </channel>
+</rss>

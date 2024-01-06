@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>UTXO 的委托代理问题 - Q3YI - Cyberspace </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Qing Yi" /><meta name="description" content="经济学中委托代理问题指的是由于代理人的利益与目标与委托人的利益与目标不一致，加上存在不确定性和信息不对称，在缺乏有效监督和措施时，代理人更倾" /><meta name="keywords" content="Blog, Computer, Economics" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.121.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/9_issue_of_utxo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="UTXO 的委托代理问题" />
+<meta property="og:description" content="经济学中委托代理问题指的是由于代理人的利益与目标与委托人的利益与目标不一致，加上存在不确定性和信息不对称，在缺乏有效监督和措施时，代理人更倾" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/9_issue_of_utxo/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2024-01-06T20:32:30+08:00" />
+
+<meta itemprop="name" content="UTXO 的委托代理问题">
+<meta itemprop="description" content="经济学中委托代理问题指的是由于代理人的利益与目标与委托人的利益与目标不一致，加上存在不确定性和信息不对称，在缺乏有效监督和措施时，代理人更倾">
+<meta itemprop="dateModified" content="2024-01-06T20:32:30+08:00" />
+<meta itemprop="wordCount" content="1380">
+<meta itemprop="keywords" content="bitcoin,blockchain,economics," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="UTXO 的委托代理问题"/>
+<meta name="twitter:description" content="经济学中委托代理问题指的是由于代理人的利益与目标与委托人的利益与目标不一致，加上存在不确定性和信息不对称，在缺乏有效监督和措施时，代理人更倾"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I, Q3yi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Posts</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I, Q3yi</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">UTXO 的委托代理问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-08-10 </span>
+        <div class="post-category">
+            <a href="/categories/economics/"> economics </a>
+            </div>
+          <span class="more-meta"> 约 1380 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#utxo-作为支付工具的委托代理问题">UTXO 作为支付工具的委托代理问题</a>
+      <ul>
+        <li><a href="#软分叉与硬分叉">软分叉与硬分叉</a></li>
+        <li><a href="#开发者矿池和代币投资者之间的信托关系及委托代理问题">开发者、矿池和代币投资者之间的信托关系及委托代理问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#utxo-作为加密权益的委托代理问题">UTXO 作为加密权益的委托代理问题</a>
+      <ul>
+        <li><a href="#投资者与-ico-发起人">投资者与 ICO 发起人</a></li>
+        <li><a href="#投资者与中心化交易所">投资者与中心化交易所</a></li>
+      </ul>
+    </li>
+    <li><a href="#utxo-作为数字资产的委托代理问题">UTXO 作为数字资产的委托代理问题</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>经济学中委托代理问题指的是由于代理人的利益与目标与委托人的利益与目标不一致，加上存在不确定性和信息不对称，在缺乏有效监督和措施时，代理人更倾向与损害委托人的利益以牟取自己利益的现象。</p>
+<h1 id="utxo-作为支付工具的委托代理问题">UTXO 作为支付工具的委托代理问题</h1>
+<h2 id="软分叉与硬分叉">软分叉与硬分叉</h2>
+<p>软分叉为向前与向后兼容，硬分叉为只向后兼容（升级过的节点可以验证未升级节点产生的块）。软件的 Bug 和版本升级都可能带来分叉。</p>
+<h2 id="开发者矿池和代币投资者之间的信托关系及委托代理问题">开发者、矿池和代币投资者之间的信托关系及委托代理问题</h2>
+<p>开发者提供分叉的技术方案并负责技术实施，矿池有权拒绝和接受升级后生产的区块，拥有投票权。开发者和矿工相当于企业的普通合伙人（General Partner）， 拥有充分的管理和控制权，代币持有者相当于普通合伙人（Limited Partner），拥有受益权。代币持有人和开发者与矿工存在委托代理关系，如果信息不对称，容易引发代理委托问题，开发者与矿工可能处于自己的私利，改变共识机制，从
+而损害代币持有者的利益。</p>
+<p>例子，比特币扩容问题，看似是开发者于矿工的技术理念不同，实则是各自利益出发点的不同。支持扩大区块的矿工，是为希望更多人使用链上的比特币交易，由此赚钱更多的交易手续费，而开发者支持闪电网络，则是开发者中有人就职于研发闪电网络的公司，可以赚取专利费，但闪电网络将大量小额交易隔离到链下，损害了矿工的利益。</p>
+<p>另外，分叉发行 IFO 相当于变相的通货膨胀，摊薄了代币持有者的权益。</p>
+<h1 id="utxo-作为加密权益的委托代理问题">UTXO 作为加密权益的委托代理问题</h1>
+<h2 id="投资者与-ico-发起人">投资者与 ICO 发起人</h2>
+<p>投资人与 ICO 发起人之间是一种基于委托代理的长期契约，投资者购买初始代币，投资发起人，发起人开发区块链项目，不承诺保障代币的未来价值。虽然发起人在 ICO 时会披露资金的使用计划，但是 ICO 之后的资金使用无人监管，发起人也没有强制义务公开资金的具体使用。信息不对称容易引起投资人与发起人之间的委托代理问题。ICO 无需专业的审核程序，容易发生 ICO 欺诈的行为，反过来在欺诈成风的情况下，投资者行为也变的短期化，不关注项目的未来价值，追求短期收益，投机炒作。</p>
+<h2 id="投资者与中心化交易所">投资者与中心化交易所</h2>
+<p>投资者与中心化交易所之间也存在委托代理问题。各类交易平台长期缺乏监管，处于完全自治的状态，集登记、托管、交易、结算等诸多功能于一身，既无监管约束，也没有市场监督。从风险防范角度看，合规的做法应是交易平台只做信息撮合和交易，而将登记、托管和结算交由具有市场公信力的第三方来负责。通常而言，资产托管在专业化、技术水平和成本投入等方面都有很高要求，绝非民间私营机构能够承担。作为私营的机构，现有中心化交易平台的托管体系从安全性上还远远不够，托管和结算风险高。</p>
+<h1 id="utxo-作为数字资产的委托代理问题">UTXO 作为数字资产的委托代理问题</h1>
+<p>数字资产以货币、证卷、实物、加密代币或者其它数字资产作为抵押而发行，映射了抵押品的价值。如果抵押物为加密代币，那么可以通过智能合约的透明可信、自动执行、强制履约等特性来保证数字资产与抵押品之间的最终兑付，但如果抵押品是现实世界的资产，就会面临价值偿付的问题。区块链的共识机制创造了链上信任，但是支持不了链下信任。数字资产发行者与持有者之间也是一种长期契约关系，在信息不对等的情况下，存在委托代理问题。</p>
+<p>我们通常所见的证卷或商品的电子化交易，由特定的可信机构负责证卷托管与清算，有效的保障了证卷交割的安全和效率。而 Bitcoin 等并没有足够可信的第三方机构，而且如果有的话，也和 Bitcoin 所设想的完全去中心话思想背道而驰，这里 Bitcoin 陷入了悖论当中。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Qing Yi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2024-01-06
+        <a href="https://github.com/tsingyi/tsingyi.git/commit/3549131c214b1d9fe54583ef123b2893443331c5" title="add post that write in 2022.">(3549131)</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bitcoin/">bitcoin</a>
+          <a href="/tags/blockchain/">blockchain</a>
+          <a href="/tags/economics/">economics</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/8_fix_windows_excluded_port_problem/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows 11 开机端口随机被占用的原因及修复办法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/7_a-more-natural-keybinding-setting-in-paredit/">
+            <span class="next-text nav-default">让 paredit 的编辑快捷键更符合直觉</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'q3yi-me';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:qingyi.tss@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tsingyi" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/26207551" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>qingyi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-70VM4N1550', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

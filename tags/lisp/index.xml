@@ -6,15 +6,14 @@
     <description>Recent content in lisp on Q3YI - Cyberspace </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jan 2022 16:41:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jan 2022 16:41:54 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>让paredit的编辑快捷键更符合直觉</title>
+      <title>让 paredit 的编辑快捷键更符合直觉</title>
       <link>http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/</link>
       <pubDate>Mon, 24 Jan 2022 16:41:54 +0800</pubDate>
-      
       <guid>http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/</guid>
-      <description>什么是paredit？ 刚开始使用lisp类语言的人大多都会觉得lisp中的括号不是很容易看清和分辨， 经常写着写着不小心删除了一个 ) 就导致不匹</description>
+      <description>什么是 paredit？ 刚开始使用 lisp 类语言的人大多都会觉得 lisp 中的括号不是很容易看清和分辨，经常写着写着不小心删除了一个 ) 就导致不匹配，如果光标</description>
     </item>
-    
   </channel>
 </rss>
