@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh"><head><title>让 Emacs 的 paredit 的编辑快捷键更符合直觉</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="让 Emacs 的 paredit 的编辑快捷键更符合直觉"/><meta property="og:description" content="什么是 paredit？ 刚开始使用 lisp 类语言的人大多都会觉得 lisp 中的括号不是很容易看清和分辨，经常写着写着不小心删除了一个 ) 就导致不匹配，如果光标还在删除的位置还好，要是不小心碰到了触控板导致光标移动到了别的地方，那可能就要仔细找找才能找到原来的位置了。这种情况频率不高还好，还有种更困扰的情景是写了一大段代码，代码中间的逻辑可能改了好几次，终于满意了，需要最后把没有写完的 ..."/><meta property="og:image" content="https://q3yi.me/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="什么是 paredit？ 刚开始使用 lisp 类语言的人大多都会觉得 lisp 中的括号不是很容易看清和分辨，经常写着写着不小心删除了一个 ) 就导致不匹配，如果光标还在删除的位置还好，要是不小心碰到了触控板导致光标移动到了别的地方，那可能就要仔细找找才能找到原来的位置了。这种情况频率不高还好，还有种更困扰的情景是写了一大段代码，代码中间的逻辑可能改了好几次，终于满意了，需要最后把没有写完的 ..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">🧠 Punk Records</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>搜索</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Blogs&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Quick-References&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="2023"><li><a href="../2023/Terminal-File-Manager" data-for="2023/Terminal-File-Manager">Terminal File Manager</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Blogs"><button class="folder-button"><span class="folder-title">Blogs</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Blogs"><li><a href="../Blogs/Emacs-中英文的对齐设置" data-for="Blogs/Emacs-中英文的对齐设置">Emacs 中英文的对齐设置</a></li><li><a href="../Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos" data-for="Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos">Moral Lessons from GNU Emacs - Protesilaos</a></li><li><a href="../Blogs/UTXO的委托代理问题" data-for="Blogs/UTXO的委托代理问题">UTXO的委托代理问题</a></li><li><a href="../Blogs/VIM实用技巧" data-for="Blogs/VIM实用技巧">VIM实用技巧</a></li><li><a href="../Blogs/Windows-开机端口被随机占用的原因与修复" data-for="Blogs/Windows-开机端口被随机占用的原因与修复">Windows 开机端口被随机占用的原因与修复</a></li><li><a href="../Blogs/使用-orgmode-+-github-pages-搭建博客" data-for="Blogs/使用-orgmode-+-github-pages-搭建博客">使用 orgmode + github pages 搭建博客</a></li><li><a href="../Blogs/经济学综合笔记" data-for="Blogs/经济学综合笔记">经济学综合笔记</a></li><li><a href="../Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题" data-for="Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题">解决 org-mode 中 LaTeX 数学公式中的中文渲染问题</a></li><li><a href="../Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉" data-for="Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉">让 Emacs 的 paredit 的编辑快捷键更符合直觉</a></li><li><a href="../Blogs/重新搭建个人博客" data-for="Blogs/重新搭建个人博客">重新搭建个人博客</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Quick-References"><button class="folder-button"><span class="folder-title">Quick References</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Quick-References"><li><a href="../Quick-References/Editor-Config-File" data-for="Quick-References/Editor-Config-File">Editor Config File</a></li><li><a href="../Quick-References/LaTeX-Quick-Reference" data-for="Quick-References/LaTeX-Quick-Reference">LaTeX Quick Reference</a></li><li><a href="../Quick-References/Markdown-Syntax" data-for="Quick-References/Markdown-Syntax">Markdown Syntax</a></li><li><a href="../Quick-References/Obsidian-Formatting-Syntax" data-for="Quick-References/Obsidian-Formatting-Syntax">Obsidian Formatting Syntax</a></li><li><a href="../Quick-References/Pacman-常用命令" data-for="Quick-References/Pacman-常用命令">Pacman 常用命令</a></li><li><a href="../Quick-References/ViFM-Cheatsheet" data-for="Quick-References/ViFM-Cheatsheet">ViFM Cheatsheet</a></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Blogs/">Blogs</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>让 Emacs 的 paredit 的编辑快捷键更符合直觉</a></div></nav><h1 class="article-title">让 Emacs 的 paredit 的编辑快捷键更符合直觉</h1><p show-comma="true" class="content-meta"><span>2022年1月24日</span><span>13分钟阅读</span></p><ul class="tags"><li><a href="../tags/Software/Editor/Emacs" class="internal tag-link">Software/Editor/Emacs</a></li></ul></div></div><article class="popover-hint"><h2 id="什么是-paredit">什么是 paredit？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#什么是-paredit" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>刚开始使用 lisp 类语言的人大多都会觉得 lisp 中的括号不是很容易看清和分辨，经常写着写着不小心删除了一个 <code>)</code> 就导致不匹配，如果光标还在删除的位置还好，要是不小心碰到了触控板导致光标移动到了别的地方，那可能就要仔细找找才能找到原来的位置了。这种情况频率不高还好，还有种更困扰的情景是写了一大段代码，代码中间的逻辑可能改了好几次，终于满意了，需要最后把没有写完的 <code>)</code> 补完，这时候就一个一个小心又小心的注意不能写少也不能写多了。第二种情景不止会在 lisp 类的语言中遇到，任何需要括号来确定作用域的语言其实都会有这个问题，比如 Golang 中的 <code>{}</code> ，只是遇到的频率小很多。</p>
+<p>为了解决这个问题，我们一般都需要借助于结构化的编辑插件，结构化的编辑插件可以分成两个类型。</p>
+<ol>
+<li>
+<p>非强制的建议性的补齐插件</p>
+<p>这是一般的编辑器现在普遍存在的功能，在你输入 <code>&quot;</code>, <code>(</code>, <code>{</code> 之后自动补齐 <code>&quot;</code>, <code>)</code>, <code>}</code> 之类的符号，emacs 24 之后提供的 <code>electric-pair-mode</code> 就是这样的实现。这中状态下用户可以任意删除 <code>&quot;</code>, <code>()</code>, <code>{}</code> 等字符，文档中可能出现括号不匹配的状态，需要用户自己去修改。</p>
+</li>
+<li>
+<p>强制要求所有括号匹配的插件</p>
+<p>类似 <code>paredit</code>, <code>lispy</code>, <code>smartparens-strict-mode</code> 的插件，要求在任何时候括号都必须匹配，如果要删除则需要一对同时删除。着保证了我们不需要再担心括号匹配的问题，但会对文档的修改造成一定的限制。</p>
+<p><code>paredit</code> 应该算是 <code>emacs</code> 上这类插件的鼻祖的了， <code>smartparens</code> 和 <code>lispy</code> 都是借鉴了 <code>paredit</code> 之后增加了一些新功能。我最开始使用的是 <code>smartparens</code> 但是并没有使用强制的模式，使用一段时间过后，其实感觉差别不大，很多功能都没有用到，这样就显得提供的功能太多了。于是我切换到了功能更加纯粹的 <code>paredit</code> 来编辑 lisp 类的代码，而其它模式下使用 emacs 自带的 <code>electric-pair-mode</code> 就完全满足需求了。</p>
+</li>
+</ol>
+<h2 id="lisp-类语言编程对-s-exp-常用的操作">lisp 类语言编程对 S-exp 常用的操作<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lisp-类语言编程对-s-exp-常用的操作" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>在使用强制括号匹配的插件之后，之前某些通过现删除后括号增加些内容，再添加后括号的操作是被禁止的，因为会导致括号不匹配。所以需要一些同时修改前后括号的操作来完成编辑动作。总结下来在一般的编辑过程中，会频繁的使用下面提到的四种操作。</p>
+<ol>
+<li>
+<p>Unwrap, 相当于解包，把一对括号中的内容拿到外面来。我们可以通过下面的例子来说明， <code>|</code> 代表光标所在位置， <code>---></code> 上代表操作之前的状态，下代表操作结束后的状态。</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo (bar| baz) quux)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo bar| baz quux)</span></span></code></pre></figure>
+</li>
+<li>
+<p>Wrap，和 Unwrap 对应，相当于封包，把内容封装到一对括号当中，同样使用例子来展示。</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo |bar baz)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo (|bar) baz)</span></span></code></pre></figure>
+</li>
+<li>
+<p>Slurp, 吃进来，向前或向后扩张当前括号的范围，把括号的前一个或者后一个元素吃到当前的括号当中来。</p>
+<ul>
+<li>向后吞并元素</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo (bar |baz) quux zot)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo (bar |baz quux) zot)</span></span>
+<span data-line> </span>
+<span data-line><span>(a b ((c| d)) e f)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(a b ((c| d) e) f)</span></span></code></pre></figure>
+<ul>
+<li>向前吞并元素</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo bar (baz| quux) zot)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo (bar baz| quux) zot)</span></span>
+<span data-line> </span>
+<span data-line><span>(a b ((c| d)) e f)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(a (b (c| d)) e f)</span></span></code></pre></figure>
+</li>
+<li>
+<p>Barf, 吐出去，向前或者向后吐出括号内最近的内容，相当于缩小当前的括号范围。</p>
+<ul>
+<li>向后吐出元素</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo (bar |baz quux) zot)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo (bar |baz) quux zot)</span></span></code></pre></figure>
+<ul>
+<li>向前吐出元素</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>(foo (bar baz |quux) zot)</span></span>
+<span data-line><span>  ---></span></span>
+<span data-line><span>(foo bar (baz |quux) zot)</span></span></code></pre></figure>
+</li>
+</ol>
+<h2 id="paredit-的默认按键绑定存在的问题">paredit 的默认按键绑定存在的问题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#paredit-的默认按键绑定存在的问题" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>针对上面常用的四种操作，paredit 中都有对应的函数，并且绑定特定的快捷键，但是使用一段时间我发现这些快捷键的设计缺乏合理的设计隐喻，所以需要死记硬背才能熟练，而且如果一段时间没有使用就多半会忘记，重新用又要再重新记忆一遍，而偏偏我还是个记忆不算好的人，十分的别扭。我们来说说默认的快捷键和存在的问题。</p>
+<ol>
+<li>
+<p>Unwrap，对应的快捷键为 <code>M-s</code>, 对应的函数为 <code>paredit-splice-sexp</code> 可以看出这个快捷键的设置完全是根据函数名来设置的，但是对于我来说我和作者对于这一操作的命名不一样，作者认为是把 S-exp 劈开，我认为这个行为更像是把 S-exp 拿出来，因为在对这个 S-exp <code>(foo|)</code> 使用是产生的结果是 <code>foo|</code>, <code>(foo bar |baz quux)</code> 产生的结果是 <code>foo bar |baz quux</code> ，这两种情况下都很难理解 splice 的语义，我认为 unwrap 的描述更准确。这就导致我在使用这个命令时需要转换，我想做一个我认为是 unwrap 的操作，需要想到用的函数是 splice，所以快捷键是 <code>M-s</code> 。</p>
+</li>
+<li>
+<p>Wrap，对应的快捷键为 <code>M-(</code> ，对应的函数为 <code>paredit-wrap-round</code> ，看起来没什么问题，用括号包起来嘛。但在使用中会有两个不好的点，第一，<code>(</code> 是需要按住 shift 才能打出的符号，也就是说我实际是要按三个按键；第二，如果我的光标在这个位置 <code>bar|</code> 快捷键确实 <code>(</code> ，这里也存在着隐喻的转换， /当然如果你实际在这个位置使用这个命令，目前的 paredit 会是这样的结果 <code>bar ()</code> / 。另外还有一个问题就是这个命名和 unwrap 是有对应关系的，当在快捷键的设计上缺完全没有考虑，造成了更多的记忆负担。</p>
+</li>
+<li>
+<p>Barf &amp; Slurp，这两个动作实际对应了四个操作，paredit 在这四个操作的快捷键设计上我认为作者是有思考的，有自己的逻辑，原有的键位设置比起一些 paredit 的设置分享上改为 <code>M-{</code>, <code>M-[</code> 之类的好上非常多，我不是很理解那些设置分享的人是通过怎样的模型来记忆这几个操作的。</p>
+<p>在默认的设置中，作者是按照操作的位置来区分的 <code>C</code> 键代表操作右边的括号：</p>
+<ul>
+<li>
+<p><code>C-&lt;right></code> 就是向后吞元素，右边括号继续往右移动，调用的函数为 <code>paredit-forward-slurp-sexp</code> , 非常直观，这也是我没有调整之前记得最清楚的操作，有时候其它操作都要转化成这个操作来完成。</p>
+</li>
+<li>
+<p><code>C-&lt;left></code> 同样操作右边括号，向后吐出元素，右边括号向左边移动，调用函数 <code>paredit-forward-barf-sexp</code> , 注意这里有个点是函数名里有个 forward，但我们的括号实际在往左边移动，这是 barf 的语义造成的问题，在我们使用快捷键，不用想函数名时不会有困扰。</p>
+</li>
+</ul>
+<p>然后默认设置中 <code>C-M</code> 键代表了操作左括号：</p>
+<ul>
+<li>
+<p><code>C-M-&lt;left></code> 就是向前吞并元素，左边的括号继续往左移动，调用的函数为 <code>paredit-backward-slurp-sexp</code> 。</p>
+</li>
+<li>
+<p><code>C-M-&lt;right></code> 就是向前吐出元素，左边的括号向右边移动，调用函数<code>paredit-backward-barf-sexp</code> 。</p>
+</li>
+</ul>
+<p>我认为 Barf &amp; Slurp 这组快捷键是作者经过精心设计的，比较的直观并且有自己的操作逻辑，比起 un/wrap 的键位设计好很多，也更容易记住。但是我不满意的点在于，我直觉上更倾向于把 slurp 的操作看作一组，barf 的操作看做另外一组，而不是把针对左括号的操作看作一组，针对右括号的操作看作一组。在实际操作中，左右括号的位置也会随着操作发生改变，虽然和方向键的方向一致，但是还是会有中模型的原点在不断移动的感觉。另外在 emacs 中，<code>C</code> 和 <code>C-M</code> 代表同一层级的操作对象也不符合 emacs 的直觉，举个例子是 <code>C-f</code> 移动一个字符，<code>M-f</code> 移动一个单词，<code>C-M-f</code> 移动一个 sexp，之间是有层级关系的模型存在。</p>
+</li>
+</ol>
+<h2 id="基于-control-meta-和方向键的解决方案">基于 control, meta 和方向键的解决方案<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#基于-control-meta-和方向键的解决方案" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>说完了默认绑定的键位问题，来说说我的改进方案。</p>
+<p>首先把 unwrap &amp; wrap 这两个操作看做一组，分别绑定为 unwrap: <code>M-&lt;up></code>, wrap: <code>M-&lt;down></code> 。可以理解为 wrap 就是向下把 sexp 放到括号这个盒子里，uwrap 就是向上把 sexp 从括号这个盒子里拿出来。</p>
+<p>其次把 slurp 的操作看作一组，把 barf 的操作看作另一组，而放弃绑定到左右括号上。</p>
+<p>Slurp 的操作全部绑定到 <code>C</code> 上，要吞掉后面的元素，使用 <code>C-&lt;right></code> 。<code>C</code> 表示吞，方向指向要吞掉元素。同理向前吞就使用 <code>C-&lt;left></code> 。</p>
+<p>Barf 的操作全部绑定到 <code>M</code> 上，要吐掉后面的元素，使用 <code>M-&lt;right></code> , <code>M</code> 表示吐，方向指向要吐出的元素。同理向前吐就使用 <code>M-&lt;left></code> 。这里的操作方向和括号的移动方向是相反的，但是我们的心理模型并不是绑定到括号的移动方向上，可以这么立即，吐出去肚子会变小，所以括号会往里缩紧。</p>
+<p>下面是调整完后的配置代码：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="emacs-lisp" data-theme="github-light github-dark"><code data-language="emacs-lisp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">use-package</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  :delight</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot; Par&quot;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  :bind</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">:map</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-mode-map</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;M-&lt;up>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-splice-sexp)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;M-&lt;down>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-wrap-round)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;C-&lt;right>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-forward-slurp-sexp)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;C-&lt;left>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-backward-slurp-sexp)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;M-&lt;left>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-backward-barf-sexp)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;M-&lt;right>&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-forward-barf-sexp))</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  :hook</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ((</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">emacs-lisp-mode</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-mode)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	 (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">scheme-mode</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> .</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-mode))</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  :config</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">define-key</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-mode-map (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">kbd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;M-s&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">nil</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">define-key</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> paredit-mode-map (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">kbd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;M-?&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">nil</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">))</span></span></code></pre></figure></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#什么是-paredit" data-for="什么是-paredit">什么是 paredit？</a></li><li class="depth-0"><a href="#lisp-类语言编程对-s-exp-常用的操作" data-for="lisp-类语言编程对-s-exp-常用的操作">lisp 类语言编程对 S-exp 常用的操作</a></li><li class="depth-0"><a href="#paredit-的默认按键绑定存在的问题" data-for="paredit-的默认按键绑定存在的问题">paredit 的默认按键绑定存在的问题</a></li><li class="depth-0"><a href="#基于-control-meta-和方向键的解决方案" data-for="基于-control-meta-和方向键的解决方案">基于 control, meta 和方向键的解决方案</a></li></ul></div></div><div class="backlinks"><h3>反向链接</h3><ul class="overflow"><li><a href="../" class="internal">Yi's Cyber Records</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/q3yi">GitHub</a></li><li><a href="mailto://qing.yi@outlook.com">Email</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js" type="module"></script></html>

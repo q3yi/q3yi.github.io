@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh"><head><title>VIM实用技巧</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="VIM实用技巧"/><meta property="og:description" content="使用 Vim 进行的编辑的核心使用逻辑为执行，重复，回退。即先执行一次编辑动作，再在别的地方重复同一操作，如果不小心出错了就回退操作。可以理解为每次的编辑动作都被 Vim 自动保存为了一小段宏，再移动到另一个地方执行同一段宏，如果发现宏录错了，就快速回退，再重复这一过程，直到编辑完成。 所以，掌握 Vim 的第一步就是理解哪些是可以重复的操作以及如何回退。 ..."/><meta property="og:image" content="https://q3yi.me/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="使用 Vim 进行的编辑的核心使用逻辑为执行，重复，回退。即先执行一次编辑动作，再在别的地方重复同一操作，如果不小心出错了就回退操作。可以理解为每次的编辑动作都被 Vim 自动保存为了一小段宏，再移动到另一个地方执行同一段宏，如果发现宏录错了，就快速回退，再重复这一过程，直到编辑完成。 所以，掌握 Vim 的第一步就是理解哪些是可以重复的操作以及如何回退。 ..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Blogs/VIM实用技巧"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">🧠 Punk Records</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>搜索</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Blogs&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Quick-References&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="2023"><li><a href="../2023/Terminal-File-Manager" data-for="2023/Terminal-File-Manager">Terminal File Manager</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Blogs"><button class="folder-button"><span class="folder-title">Blogs</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Blogs"><li><a href="../Blogs/Emacs-中英文的对齐设置" data-for="Blogs/Emacs-中英文的对齐设置">Emacs 中英文的对齐设置</a></li><li><a href="../Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos" data-for="Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos">Moral Lessons from GNU Emacs - Protesilaos</a></li><li><a href="../Blogs/UTXO的委托代理问题" data-for="Blogs/UTXO的委托代理问题">UTXO的委托代理问题</a></li><li><a href="../Blogs/VIM实用技巧" data-for="Blogs/VIM实用技巧">VIM实用技巧</a></li><li><a href="../Blogs/Windows-开机端口被随机占用的原因与修复" data-for="Blogs/Windows-开机端口被随机占用的原因与修复">Windows 开机端口被随机占用的原因与修复</a></li><li><a href="../Blogs/使用-orgmode-+-github-pages-搭建博客" data-for="Blogs/使用-orgmode-+-github-pages-搭建博客">使用 orgmode + github pages 搭建博客</a></li><li><a href="../Blogs/经济学综合笔记" data-for="Blogs/经济学综合笔记">经济学综合笔记</a></li><li><a href="../Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题" data-for="Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题">解决 org-mode 中 LaTeX 数学公式中的中文渲染问题</a></li><li><a href="../Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉" data-for="Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉">让 Emacs 的 paredit 的编辑快捷键更符合直觉</a></li><li><a href="../Blogs/重新搭建个人博客" data-for="Blogs/重新搭建个人博客">重新搭建个人博客</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Quick-References"><button class="folder-button"><span class="folder-title">Quick References</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Quick-References"><li><a href="../Quick-References/Editor-Config-File" data-for="Quick-References/Editor-Config-File">Editor Config File</a></li><li><a href="../Quick-References/LaTeX-Quick-Reference" data-for="Quick-References/LaTeX-Quick-Reference">LaTeX Quick Reference</a></li><li><a href="../Quick-References/Markdown-Syntax" data-for="Quick-References/Markdown-Syntax">Markdown Syntax</a></li><li><a href="../Quick-References/Obsidian-Formatting-Syntax" data-for="Quick-References/Obsidian-Formatting-Syntax">Obsidian Formatting Syntax</a></li><li><a href="../Quick-References/Pacman-常用命令" data-for="Quick-References/Pacman-常用命令">Pacman 常用命令</a></li><li><a href="../Quick-References/ViFM-Cheatsheet" data-for="Quick-References/ViFM-Cheatsheet">ViFM Cheatsheet</a></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Blogs/">Blogs</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>VIM实用技巧</a></div></nav><h1 class="article-title">VIM实用技巧</h1><p show-comma="true" class="content-meta"><span>2023年10月31日</span><span>6分钟阅读</span></p><ul class="tags"><li><a href="../tags/Software/Editor/Vim" class="internal tag-link">Software/Editor/Vim</a></li></ul></div></div><article class="popover-hint"><p>使用 Vim 进行的编辑的核心使用逻辑为<strong>执行，重复，回退</strong>。即先执行一次编辑动作，再在别的地方重复同一操作，如果不小心出错了就回退操作。可以理解为每次的编辑动作都被 Vim 自动保存为了一小段宏，再移动到另一个地方执行同一段宏，如果发现宏录错了，就快速回退，再重复这一过程，直到编辑完成。</p>
+<p>所以，掌握 Vim 的第一步就是理解哪些是可以重复的操作以及如何回退。</p>
+<h2 id="可重复操作和对应的回退操作">可重复操作和对应的回退操作<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#可重复操作和对应的回退操作" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Vim 中有很多操作是同一操作的两个方向，这类操作一般使用大小写来区分方向，比如 <code>f{char}</code> 向前到指定字符，<code>F{char}</code> 向后前进到指定字符。</p>
+<p>一些编辑操作也有特别的撤销的操作，如下表所示：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>目的</th><th>操作</th><th>重复</th><th>回退</th></tr></thead><tbody><tr><td>做出一个修改</td><td>{edit}</td><td><code>.</code></td><td><code>u</code></td></tr><tr><td>在行内查找下一个制定字符</td><td><code>f{char}</code>/<code>t{char}</code></td><td><code>;</code></td><td><code>,</code></td></tr><tr><td>在行内查找上一个制定字符</td><td><code>F{char}</code>/<code>T{char}</code></td><td><code>;</code></td><td><code>,</code></td></tr><tr><td>在文档中查找下一处匹配项</td><td><code>/pattern&lt;CR></code></td><td><code>n</code></td><td><code>N</code></td></tr><tr><td>在文档中查找上一处匹配项</td><td><code>?pattern&lt;CR></code></td><td><code>n</code></td><td><code>N</code></td></tr><tr><td>执行替换</td><td><code>:s/target/replacement</code></td><td><code>&amp;</code></td><td><code>u</code></td></tr><tr><td>执行一系列修改</td><td><code>qx{changes}q</code></td><td><code>@x</code></td><td><code>u</code></td></tr></tbody></table></div>
+<h2 id="undo-命令">Undo 命令<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#undo-命令" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Normal 模式下使用 <code>u</code> 可以撤销一次编辑动作。</p>
+<blockquote class="callout danger" data-callout="danger">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>注意 </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>命令撤销的不是上一次的输入，而是一次编辑动作。</p>
+</div>
+</blockquote>
+<p>一次编辑动作可以被以下三种情况规定：</p>
+<ol>
+<li>在 Normal Mode 中使用编辑动作， 比如 <code>.</code>, <code>&lt;C-a></code>, <code>s/target/replace</code>；</li>
+<li>进入 Insert Mode 到退出 Insert Mode 中间的所有操作，除了包含 3 中所述的情况；</li>
+<li>在 Insert Mode 中使用光标移动的操作，会立即将已有的输入保存为一次编辑动作块，包括 <code>&lt;UP></code>, <code>&lt;Down></code>, <code>&lt;Left></code>, <code>&lt;Right></code> 等，可以理解为我们回到了 Normal Mode 进行了光标的移动。</li>
+</ol>
+<blockquote class="callout tips" data-callout="tips">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Tips</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>使用 Redo 命令来撤销 Undo，快捷键为 <code>&lt;Ctrl + r></code> 。</p>
+</div>
+</blockquote>
+<h2 id="快速增减数字">快速增减数字<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#快速增减数字" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><code>&lt;c-a></code> 会正向跳到第一个数字上，并将数字 +1， <code>&lt;c-x></code> 会将数字 -1， 也可手动制定增减的值，如 <code>180&lt;c-a></code> 。但有两点需要注意：</p>
+<ol>
+<li>进制问题，类似 <code>007</code> 这种数字，会默认识别为 8 进制数</li>
+<li>日期增减问题，如果日期格式为 <code>2020-10-07</code>，当试图对月日进行增减时，会被识别为负数，其增减方向和期望的方向恰好相反</li>
+</ol>
+<h2 id="以-root-权限保存文件">以 root 权限保存文件<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#以-root-权限保存文件" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>:w !sudo tee % > /dev/null
+</code></pre>
+<p><code>%</code> 符号会自动展开为当前文件路径，所以这条命令工作的原理就是通过 Vim <code>:write</code> 命令将文件内容通过标准输出写入到有 root 权限的 <code>sudo tee &lt;filepath></code>命令，这样就能成功保存了。</p>
+<blockquote class="callout danger" data-callout="danger">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>注意 </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>这个技巧只能用于 <a href="../Vim" class="internal" data-slug="Vim">Vim</a>，而不适用于 <a href="../Neovim" class="internal" data-slug="Neovim">Neovim</a>，Neovim 中不支持 <code>!</code> 命令中交互输入密码，所以只能使用插件或者将 <code>tee</code> 命令设置为不使用密码也能使用 <code>sudo</code>，再使用命令 <code>:w sudo -n tee %</code> 调用。
+See Also: Neovim FAQ, <a href="https://github.com/neovim/neovim/issues/1496" class="external">Neovim Issue<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://github.com/neovim/neovim/issues/1716#issuecomment-454519716" class="external">Another Issue<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</div>
+</blockquote>
+<h2 id="输入特殊字符">输入特殊字符<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#输入特殊字符" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><a href="../Vim" class="internal" data-slug="Vim">Vim</a>/<a href="../Neovim" class="internal" data-slug="Neovim">Neovim</a>中支持使用<a href="../ASCII" class="internal" data-slug="ASCII">ASCII</a>或<a href="../Unicode" class="internal" data-slug="Unicode">Unicode</a>编码输入键盘上无法找到的字符，在输入模式下使用 <code>Ctrl + v</code> 快捷键就能进入编码输入的模式，这模式下有三种不同输入。</p>
+<ol>
+<li>直接输入 3 位数字，如 <code>&lt;Ctrl + v>065</code> 会以十进制编码输入字符，这里会输入大写字母 “A”</li>
+<li>输入 <code>u</code> 之后可以输入 4 位数字的 Unicode 字符，如 <code>&lt;Ctrl + v>u00bf</code> 会输入字符 ”¿”</li>
+<li>输入非数字键则会直接输入键入的字符，比如 <code>&lt;Ctrl + v>&lt;TAB></code> 会输入一个 tab 符，并且不会因为在配置中设置了 tab 转空格而自动的被转化为空格</li>
+</ol>
+<p>如果已经在文本中存在的字符，如果想知道其字符编码，可以在 Normal Mode 将光标移动到对应字符使用快捷键 <code>ga</code>，屏幕下方就会显示出其对应的编码。</p>
+<p>另外也可以通过二合字母来插入特殊字符，使用方式是在插入模式下使用 <code>&lt;Ctrl + k>{char1}{char2}</code> 的快捷键，比如 <code>&lt;Ctrl + k>&lt;&lt;</code> 可以输入左书名号 ”«“，<code>&lt;Ctrl + k>12</code> 可以输入 “½”，二合字母比起使用数字更容易记忆使用，使用 <code>:h digraphs</code> 了解更多信息，或者使用 <code>:h digraph-table</code> 查询所有可以输入的字符表。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>按键</th><th>用途</th></tr></thead><tbody><tr><td><code>&lt;Ctrl+v>{123}</code></td><td>以十进制字符编码输入字符</td></tr><tr><td><code>&lt;Ctrl+v>u{1234}</code></td><td>以十六进制编码输入字符</td></tr><tr><td><code>&lt;Ctrl+v>{nondigital}</code></td><td>按原义插入非数字字符</td></tr><tr><td><code>&lt;Ctrl+k>{char1}{char2}</code></td><td>插入二合字母表示的字符</td></tr></tbody></table></div>
+<h2 id="参考">参考<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#参考" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://book.douban.com/subject/25869486/" class="external">《Vim 实用技巧》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#可重复操作和对应的回退操作" data-for="可重复操作和对应的回退操作">可重复操作和对应的回退操作</a></li><li class="depth-0"><a href="#undo-命令" data-for="undo-命令">Undo 命令</a></li><li class="depth-0"><a href="#快速增减数字" data-for="快速增减数字">快速增减数字</a></li><li class="depth-0"><a href="#以-root-权限保存文件" data-for="以-root-权限保存文件">以 root 权限保存文件</a></li><li class="depth-0"><a href="#输入特殊字符" data-for="输入特殊字符">输入特殊字符</a></li><li class="depth-0"><a href="#参考" data-for="参考">参考</a></li></ul></div></div><div class="backlinks"><h3>反向链接</h3><ul class="overflow"><li><a href="../" class="internal">Yi's Cyber Records</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/q3yi">GitHub</a></li><li><a href="mailto://qing.yi@outlook.com">Email</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js" type="module"></script></html>

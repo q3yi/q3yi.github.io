@@ -1,249 +1,55 @@
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/computer/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-01-06T19:04:14+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/8_fix_windows_excluded_port_problem/</loc>
-    <lastmod>2024-01-06T19:04:14+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/wsl/</loc>
-    <lastmod>2024-01-06T19:04:14+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/bitcoin/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/blockchain/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/economics/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/economics/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/9_issue_of_utxo/</loc>
-    <lastmod>2024-01-06T20:32:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/emacs/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/emacs/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/lisp/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/paredit/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/7_a-more-natural-keybinding-setting-in-paredit/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/cjk-font/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/elisp/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/5_set_different_font_family_for_sc_in_emacs/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/font-family/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/latex/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/orgmode/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/xelatex/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/4_use_xelatex_instead_of_latex_in_org_preview_latex_process/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/learn/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/notes/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/3_economic-notes/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/github/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/2_build-blog-with-orgmode-hugo-and-github-pages/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/blog/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/misc/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/1_rebulid-my-personal-blog-site/</loc>
-    <lastmod>2024-01-06T20:03:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://q3yi.me/2023/Terminal-File-Manager</loc>
+    <lastmod>2023-11-12T00:29:00.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/Emacs-%E4%B8%AD%E8%8B%B1%E6%96%87%E7%9A%84%E5%AF%B9%E9%BD%90%E8%AE%BE%E7%BD%AE</loc>
+    <lastmod>2021-12-18T03:24:07.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos</loc>
+    <lastmod>2024-04-05T02:27:48.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/UTXO%E7%9A%84%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98</loc>
+    <lastmod>2022-08-10T04:36:00.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/VIM%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7</loc>
+    <lastmod>2023-10-31T02:47:00.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/Windows-%E5%BC%80%E6%9C%BA%E7%AB%AF%E5%8F%A3%E8%A2%AB%E9%9A%8F%E6%9C%BA%E5%8D%A0%E7%94%A8%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B8%8E%E4%BF%AE%E5%A4%8D</loc>
+    <lastmod>2024-01-06T05:42:00.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/%E4%BD%BF%E7%94%A8-orgmode-+-github-pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2</loc>
+    <lastmod>2020-12-06T12:38:24.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%BB%BC%E5%90%88%E7%AC%94%E8%AE%B0</loc>
+    <lastmod>2024-09-28T12:06:13.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/%E8%A7%A3%E5%86%B3-org-mode-%E4%B8%AD-LaTeX-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E4%B8%AD%E7%9A%84%E4%B8%AD%E6%96%87%E6%B8%B2%E6%9F%93%E9%97%AE%E9%A2%98</loc>
+    <lastmod>2021-12-16T15:39:30.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/%E8%AE%A9-Emacs-%E7%9A%84-paredit-%E7%9A%84%E7%BC%96%E8%BE%91%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%9B%B4%E7%AC%A6%E5%90%88%E7%9B%B4%E8%A7%89</loc>
+    <lastmod>2022-01-24T08:41:54.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Blogs/%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2</loc>
+    <lastmod>2020-12-03T12:31:20.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/Editor-Config-File</loc>
+    <lastmod>2024-04-15T07:38:52.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/LaTeX-Quick-Reference</loc>
+    <lastmod>2024-04-13T08:44:21.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/Markdown-Syntax</loc>
+    <lastmod>2024-04-13T02:56:20.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/Obsidian-Formatting-Syntax</loc>
+    <lastmod>2024-04-13T05:21:11.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/Pacman-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4</loc>
+    <lastmod>2024-04-05T02:31:54.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/Quick-References/ViFM-Cheatsheet</loc>
+    <lastmod>2023-11-25T01:02:00.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.me/</loc>
+    <lastmod>2024-09-29T02:42:39.000Z</lastmod>
+  </url></urlset>

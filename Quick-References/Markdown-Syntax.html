@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh"><head><title>Markdown Syntax</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Markdown Syntax"/><meta property="og:description" content="基本语法 标题 (Heading) # h1 ## h2 ### h3 head level 1 ============ head level 2 ------------ 加粗 (Bold) **bold text** __bold text__ 斜体 (Italic) *italicized text* _italicized text_ 引用 (Blockquote) ..."/><meta property="og:image" content="https://q3yi.me/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="基本语法 标题 (Heading) # h1 ## h2 ### h3 head level 1 ============ head level 2 ------------ 加粗 (Bold) **bold text** __bold text__ 斜体 (Italic) *italicized text* _italicized text_ 引用 (Blockquote) ..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Quick-References/Markdown-Syntax"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">🧠 Punk Records</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>搜索</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Blogs&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Quick-References&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="2023"><li><a href="../2023/Terminal-File-Manager" data-for="2023/Terminal-File-Manager">Terminal File Manager</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Blogs"><button class="folder-button"><span class="folder-title">Blogs</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Blogs"><li><a href="../Blogs/Emacs-中英文的对齐设置" data-for="Blogs/Emacs-中英文的对齐设置">Emacs 中英文的对齐设置</a></li><li><a href="../Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos" data-for="Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos">Moral Lessons from GNU Emacs - Protesilaos</a></li><li><a href="../Blogs/UTXO的委托代理问题" data-for="Blogs/UTXO的委托代理问题">UTXO的委托代理问题</a></li><li><a href="../Blogs/VIM实用技巧" data-for="Blogs/VIM实用技巧">VIM实用技巧</a></li><li><a href="../Blogs/Windows-开机端口被随机占用的原因与修复" data-for="Blogs/Windows-开机端口被随机占用的原因与修复">Windows 开机端口被随机占用的原因与修复</a></li><li><a href="../Blogs/使用-orgmode-+-github-pages-搭建博客" data-for="Blogs/使用-orgmode-+-github-pages-搭建博客">使用 orgmode + github pages 搭建博客</a></li><li><a href="../Blogs/经济学综合笔记" data-for="Blogs/经济学综合笔记">经济学综合笔记</a></li><li><a href="../Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题" data-for="Blogs/解决-org-mode-中-LaTeX-数学公式中的中文渲染问题">解决 org-mode 中 LaTeX 数学公式中的中文渲染问题</a></li><li><a href="../Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉" data-for="Blogs/让-Emacs-的-paredit-的编辑快捷键更符合直觉">让 Emacs 的 paredit 的编辑快捷键更符合直觉</a></li><li><a href="../Blogs/重新搭建个人博客" data-for="Blogs/重新搭建个人博客">重新搭建个人博客</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Quick-References"><button class="folder-button"><span class="folder-title">Quick References</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Quick-References"><li><a href="../Quick-References/Editor-Config-File" data-for="Quick-References/Editor-Config-File">Editor Config File</a></li><li><a href="../Quick-References/LaTeX-Quick-Reference" data-for="Quick-References/LaTeX-Quick-Reference">LaTeX Quick Reference</a></li><li><a href="../Quick-References/Markdown-Syntax" data-for="Quick-References/Markdown-Syntax">Markdown Syntax</a></li><li><a href="../Quick-References/Obsidian-Formatting-Syntax" data-for="Quick-References/Obsidian-Formatting-Syntax">Obsidian Formatting Syntax</a></li><li><a href="../Quick-References/Pacman-常用命令" data-for="Quick-References/Pacman-常用命令">Pacman 常用命令</a></li><li><a href="../Quick-References/ViFM-Cheatsheet" data-for="Quick-References/ViFM-Cheatsheet">ViFM Cheatsheet</a></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Quick-References/">Quick References</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Markdown Syntax</a></div></nav><h1 class="article-title">Markdown Syntax</h1><p show-comma="true" class="content-meta"><span>2024年4月13日</span><span>2分钟阅读</span></p><ul class="tags"><li><a href="../tags/Reference" class="internal tag-link">Reference</a></li><li><a href="../tags/Programming/Markdown" class="internal tag-link">Programming/Markdown</a></li></ul></div></div><article class="popover-hint"><h2 id="基本语法">基本语法<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#基本语法" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="标题-heading">标题 (Heading)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#标题-heading" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code># h1
+
+## h2
+
+### h3
+
+head level 1
+============
+
+head level 2
+------------
+</code></pre>
+<h3 id="加粗-bold">加粗 (Bold)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#加粗-bold" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>**bold text**
+__bold text__
+</code></pre>
+<h3 id="斜体-italic">斜体 (Italic)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#斜体-italic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>*italicized text*
+_italicized text_
+</code></pre>
+<h3 id="引用-blockquote">引用 (Blockquote)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#引用-blockquote" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>> blockquote
+</code></pre>
+<h3 id="有序列表-ordered-list">有序列表 (Ordered List)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#有序列表-ordered-list" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>1. First item
+    1. Nested first item
+    2. Nested second item
+2. Second item
+</code></pre>
+<h3 id="无序列表-unordered-list">无序列表 (Unordered List)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#无序列表-unordered-list" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>- First item
+- Second item
+- Third item
+
+* First item
+* Second item
+* Third item
+
++ First item
++ Second item
++ Third item
+</code></pre>
+<h3 id="嵌入代码-inline-code">嵌入代码 (Inline Code)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#嵌入代码-inline-code" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>`code`
+</code></pre>
+<h3 id="水平分割线-horizontal-rule">水平分割线 (Horizontal Rule)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#水平分割线-horizontal-rule" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>---
+</code></pre>
+<h3 id="链接-link">链接 (Link)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#链接-link" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>[title](https://www.example.com)
+[in document link](#heading)
+
+&lt;http://raw.http.link>
+&lt;raw@mail.link>
+
+[reference style link][1]
+[1]: &lt;https://not.supported.in.all.editor>
+</code></pre>
+<h3 id="图片-image">图片 (Image)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#图片-image" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>![alt text](image.jpg)
+![alt text](image.jpg &quot;optional title&quot;)
+</code></pre>
+<h2 id="增强的语法">增强的语法<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#增强的语法" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tips" data-callout="tips">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Tips</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>增强的语法并不是所有的 markdown render 都支持，使用时需要注意。</p>
+</div>
+</blockquote>
+<h3 id="表格-table">表格 (Table)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#表格-table" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>| Syntax    | Description     |
+| --------- | --------------- |
+| Header    | Title           |
+| Paragraph | Text &lt;br> Text1 |
+
+align text in table
+
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+</code></pre>
+<h3 id="代码块-code-block">代码块 (Code Block)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#代码块-code-block" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">```json</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  &quot;firstName&quot;: &quot;John&quot;,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  &quot;lastName&quot;: &quot;Smith&quot;,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  &quot;age&quot;: 25</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">```</span></span></code></pre></figure>
+<h3 id="脚注-footnote">脚注 (Footnote)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#脚注-footnote" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+</code></pre>
+<h3 id="标题id-heading-id">标题ID (Heading ID)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#标题id-heading-id" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>### My Great Heading {#custom-id}
+</code></pre>
+<h3 id="定义列表-definition-lists">定义列表 (Definition Lists)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#定义列表-definition-lists" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+</code></pre>
+<h3 id="删除线-strikethrough">删除线 (Strikethrough)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#删除线-strikethrough" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>~~The world is flat.~~
+</code></pre>
+<h3 id="任务清单-task-list">任务清单 (Task List)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#任务清单-task-list" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+</code></pre>
+<h3 id="表情-emoji">表情 (Emoji)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#表情-emoji" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>That is so funny! :joy:
+</code></pre>
+<h3 id="高亮-highlight">高亮 (Highlight)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#高亮-highlight" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>I need to highlight these ==very important words==.
+</code></pre>
+<h3 id="上下标-superscriptsubscript">上下标 (Superscript/Subscript)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#上下标-superscriptsubscript" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>X^2^
+H~2~O
+</code></pre>
+<p>对于不支持的 markdown 程序，可以直接使用内嵌 html 的方式实现。</p>
+<pre><code>X&lt;sup>2&lt;/sup>
+H&lt;sub>2&lt;/sub>O
+</code></pre></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#基本语法" data-for="基本语法">基本语法</a></li><li class="depth-1"><a href="#标题-heading" data-for="标题-heading">标题 (Heading)</a></li><li class="depth-1"><a href="#加粗-bold" data-for="加粗-bold">加粗 (Bold)</a></li><li class="depth-1"><a href="#斜体-italic" data-for="斜体-italic">斜体 (Italic)</a></li><li class="depth-1"><a href="#引用-blockquote" data-for="引用-blockquote">引用 (Blockquote)</a></li><li class="depth-1"><a href="#有序列表-ordered-list" data-for="有序列表-ordered-list">有序列表 (Ordered List)</a></li><li class="depth-1"><a href="#无序列表-unordered-list" data-for="无序列表-unordered-list">无序列表 (Unordered List)</a></li><li class="depth-1"><a href="#嵌入代码-inline-code" data-for="嵌入代码-inline-code">嵌入代码 (Inline Code)</a></li><li class="depth-1"><a href="#水平分割线-horizontal-rule" data-for="水平分割线-horizontal-rule">水平分割线 (Horizontal Rule)</a></li><li class="depth-1"><a href="#链接-link" data-for="链接-link">链接 (Link)</a></li><li class="depth-1"><a href="#图片-image" data-for="图片-image">图片 (Image)</a></li><li class="depth-0"><a href="#增强的语法" data-for="增强的语法">增强的语法</a></li><li class="depth-1"><a href="#表格-table" data-for="表格-table">表格 (Table)</a></li><li class="depth-1"><a href="#代码块-code-block" data-for="代码块-code-block">代码块 (Code Block)</a></li><li class="depth-1"><a href="#脚注-footnote" data-for="脚注-footnote">脚注 (Footnote)</a></li><li class="depth-1"><a href="#标题id-heading-id" data-for="标题id-heading-id">标题ID (Heading ID)</a></li><li class="depth-1"><a href="#定义列表-definition-lists" data-for="定义列表-definition-lists">定义列表 (Definition Lists)</a></li><li class="depth-1"><a href="#删除线-strikethrough" data-for="删除线-strikethrough">删除线 (Strikethrough)</a></li><li class="depth-1"><a href="#任务清单-task-list" data-for="任务清单-task-list">任务清单 (Task List)</a></li><li class="depth-1"><a href="#表情-emoji" data-for="表情-emoji">表情 (Emoji)</a></li><li class="depth-1"><a href="#高亮-highlight" data-for="高亮-highlight">高亮 (Highlight)</a></li><li class="depth-1"><a href="#上下标-superscriptsubscript" data-for="上下标-superscriptsubscript">上下标 (Superscript/Subscript)</a></li></ul></div></div><div class="backlinks"><h3>反向链接</h3><ul class="overflow"><li><a href="../Quick-References/Obsidian-Formatting-Syntax" class="internal">Obsidian Formatting Syntax</a></li><li><a href="../" class="internal">Yi's Cyber Records</a></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.4.0</a> © 2024</p><ul><li><a href="https://github.com/q3yi">GitHub</a></li><li><a href="mailto://qing.yi@outlook.com">Email</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js" type="module"></script></html>
