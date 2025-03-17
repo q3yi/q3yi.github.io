@@ -2,69 +2,69 @@
 <rss version="2.0">
     <channel>
       <title>🧠 Punk Records</title>
-      <link>https://q3yi.me</link>
+      <link>https://q3yi.github.io</link>
       <description>最近的10条笔记 on 🧠 Punk Records</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Yi&#039;s Cyber Records</title>
-    <link>https://q3yi.me/</link>
-    <guid>https://q3yi.me/</guid>
-    <description>你好，陌生人： 欢迎来到我的赛博花园！ 希望你是被搜索引擎检索带到了这里，因为那样意味着这里的某些信息可能对你有所帮助。如果真的能够帮助到你，我会十分高兴。 如果不是，那不管目的是什么，希望你也能找到你需要的信息。 这个空间中的文章是我本地的个人笔记的同步，当然并不是全部的笔记都会同步，目前只有少部分的文章同步，但我的目标是逐步的将更多的没有个人隐私的笔记同步到这里。 ...</description>
-    <pubDate>Sun, 29 Sep 2024 02:42:39 GMT</pubDate>
+    <title>建立沟通的12种快速方法</title>
+    <link>https://q3yi.github.io/2025/%E5%BB%BA%E7%AB%8B%E6%B2%9F%E9%80%9A%E7%9A%8412%E7%A7%8D%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95</link>
+    <guid>https://q3yi.github.io/2025/%E5%BB%BA%E7%AB%8B%E6%B2%9F%E9%80%9A%E7%9A%8412%E7%A7%8D%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95</guid>
+    <description>从不可能变为可能 解决问题的前提是需要相信问题可以解决，如果沟通中遇到对方认为无法解决的困难，这种内心的预设立场可以封住他进行积极思考的可能性，那可以引导对方说出自己认为不可能的事，当对方在说出不可能的事同时就会转向积极思考，当发现他的思想开始从“绝对不可能”变成了“有可能，不过”时要给予肯定，这样有利于推动事情的解决。 魔术悖论 需要和处于消极情绪中的人进行沟通时，好的办法不是上来说教，而是说出他消极的原因让他感到你懂他，这是让对方感觉到“你懂我”的运用，说出对方消极的原因并表达出你理解他为何消极时，可以让处在压力之下的对方获得喘息的机会，也会增加他对你的信任，同时对方在使用“是”来回复你他...</description>
+    <pubDate>Thu, 06 Mar 2025 06:30:49 GMT</pubDate>
   </item><item>
-    <title>经济学综合笔记</title>
-    <link>https://q3yi.me/Blogs/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%BB%BC%E5%90%88%E7%AC%94%E8%AE%B0</link>
-    <guid>https://q3yi.me/Blogs/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%BB%BC%E5%90%88%E7%AC%94%E8%AE%B0</guid>
-    <description>...</description>
-    <pubDate>Sat, 28 Sep 2024 12:06:13 GMT</pubDate>
+    <title>构建沟通的九大核心原则</title>
+    <link>https://q3yi.github.io/2025/%E6%9E%84%E5%BB%BA%E6%B2%9F%E9%80%9A%E7%9A%84%E4%B9%9D%E5%A4%A7%E6%A0%B8%E5%BF%83%E5%8E%9F%E5%88%99</link>
+    <guid>https://q3yi.github.io/2025/%E6%9E%84%E5%BB%BA%E6%B2%9F%E9%80%9A%E7%9A%84%E4%B9%9D%E5%A4%A7%E6%A0%B8%E5%BF%83%E5%8E%9F%E5%88%99</guid>
+    <description>保持镇定 有效沟通的前提是两人都在使用自己的逻辑脑来交流，所以第一原则是让自己首先处于镇定的状态，而不是被自己的杏仁核劫持或处于情绪激动的状态。那如何能够快速的控制住自己的情绪啦？我们锻炼自己应该遵循如下的心路历程： 反应期（“哦，见鬼”）：不要否认自己的沮丧和害怕，如果可以大声说出来，呼气的动作可以帮助自己冷静。可以离开座位或闭上眼睛，集中精力承认自己的愤怒或恐惧并摆脱情绪的束缚。 释放期（“天啦”）：承认自己的情绪后，深呼吸，放松下来。 重新定位期（“拜托”）：继续深呼吸，走出自己的防御状态。 重新聚焦期（“那就这样吧”）：思考自己能做什么，减少伤害控制情况。 重新投入期（“行，没问题”）...</description>
+    <pubDate>Wed, 05 Mar 2025 05:29:04 GMT</pubDate>
   </item><item>
-    <title>Editor Config File</title>
-    <link>https://q3yi.me/Quick-References/Editor-Config-File</link>
-    <guid>https://q3yi.me/Quick-References/Editor-Config-File</guid>
-    <description>EditorConfig 在支持他的编辑器中可以为项目中各种类型的文件单独设置缩进的策略，比如在 .go 文件中使用 tab 缩进，而在同项目的 .html 中适用两格空格缩进。 当然，这个需要编辑器的支持，Neovim 是支持的，这样在 neovim 的全局设置中可以设置为默认是四格空格缩进，而在项目中为 html, yaml ...</description>
-    <pubDate>Mon, 15 Apr 2024 07:38:52 GMT</pubDate>
+    <title>镜像神经元</title>
+    <link>https://q3yi.github.io/2025/%E9%95%9C%E5%83%8F%E7%A5%9E%E7%BB%8F%E5%85%83</link>
+    <guid>https://q3yi.github.io/2025/%E9%95%9C%E5%83%8F%E7%A5%9E%E7%BB%8F%E5%85%83</guid>
+    <description>镜像神经元是人类共情的基础，他把我们的感受传送到另一个人的脑海里。比如看到同事的手被纸划伤你也会感觉到疼，看到电影中英雄救出小女孩，你也会欢呼，就像那一瞬间事情好像就发生在你自己的身上，这就是你脑中的镜像神经元被激活的原因。 在生活中我们会不断的把世界当成一面镜子，满足它的需求，希望获得它的爱和支持，而如果付出之后没有获得相应的回复，就会产生一种缺失感，如果这种缺失感得不到满足，我们就可能患上“镜像神经元受体缺陷”。而当今现实世界中每一天我们都会和很多“镜像神经元受体缺陷”的患者，很多人尽力付出却只能日复一日的得到冷漠、敌意或者更本没有回应。所以如果能在沟通中理解别人的需求，并做出回应，将是一...</description>
+    <pubDate>Wed, 05 Mar 2025 05:00:54 GMT</pubDate>
   </item><item>
-    <title>LaTeX Quick Reference</title>
-    <link>https://q3yi.me/Quick-References/LaTeX-Quick-Reference</link>
-    <guid>https://q3yi.me/Quick-References/LaTeX-Quick-Reference</guid>
-    <description>1 数学公式编辑 Displaying a formula 1.1 符号与字母 Symbol and Alphabet 1.1.1 希腊字母 Greek alphabet 序号小写LaTeX读音序号大写LaTeX读音1\alpha\alpha/ˈælfə/31\Gamma\Gamma/ˈɡæmə/2\beta\beta/ˈbiːtə/, ...</description>
-    <pubDate>Sat, 13 Apr 2024 08:44:21 GMT</pubDate>
+    <title>杏仁核劫持</title>
+    <link>https://q3yi.github.io/2025/%E6%9D%8F%E4%BB%81%E6%A0%B8%E5%8A%AB%E6%8C%81</link>
+    <guid>https://q3yi.github.io/2025/%E6%9D%8F%E4%BB%81%E6%A0%B8%E5%8A%AB%E6%8C%81</guid>
+    <description>杏仁核是人脑深处的一个小小区域，当察觉到威胁或挑衅时，它会迅速的采取行动。虽然大脑中掌管逻辑的额叶皮层也会处于警戒状态，但高级中枢需要更多时间来分析威胁再采取行动，而杏仁核用指挥的权力，可以把冲动引导至额叶皮层，也可以让其从额叶皮层转移。当人处于非常恐惧的时，杏仁核会立马关闭高级中枢，以最原始的本能去面对威胁，这时候人便处于 杏仁核劫持1 的状态。但并不是只要一受到威胁恐惧杏仁核就会关闭大脑，在选择关闭高级中枢之前，杏仁核也会评估状态，在这段时间还有停顿的余地，但一旦进入劫持的状态，就无法停止了。 Footnotes 《倾听的力量》第二章 ↩ .</description>
+    <pubDate>Wed, 05 Mar 2025 03:34:33 GMT</pubDate>
   </item><item>
-    <title>Obsidian Formatting Syntax</title>
-    <link>https://q3yi.me/Quick-References/Obsidian-Formatting-Syntax</link>
-    <guid>https://q3yi.me/Quick-References/Obsidian-Formatting-Syntax</guid>
-    <description>基于 markdown 的语法 Obsidian 本身的 notes 都是 markdown 文件，所以支持大部分的 Markdown Syntax，对一些语法有所增加，有一些语意有稍微的改变。主要的不同有下面这些。 Markdown Link 语法的增强 首先对 Markdown Syntax ❯ 链接 (Link) 增加了一种特殊种类，[[link]] ...</description>
-    <pubDate>Sat, 13 Apr 2024 05:21:11 GMT</pubDate>
+    <title>三脑理论</title>
+    <link>https://q3yi.github.io/2025/%E4%B8%89%E8%84%91%E7%90%86%E8%AE%BA</link>
+    <guid>https://q3yi.github.io/2025/%E4%B8%89%E8%84%91%E7%90%86%E8%AE%BA</guid>
+    <description>除了在解刨结构上我们的大脑可以被分为大脑、小脑和脑干三个部分外，心理学家 Paul MacLean 提出在认知层面也可以分为三层由下至上的层级结构1，其分别为： 原始动物脑（爬行脑）： 负责指导“战或逃”等行为和反应，基本属于下意识的反应，不涉及太多的思考。比如当遇到危险时第一反应是停止思考呆在原地一动不动，这是下意识里认为一动不动可以避免被捕食者发现的本能。 哺乳动物脑（哺乳脑）： 是情绪反应层，种种强烈的情感都由这层产生和控制。 灵长动物脑（理智脑）： 负责认知、智力和精神价值，它会从爬行脑和哺乳脑收集数据，筛选分析，逻辑推理，最后做出切实、明智符合道德规范的决定。 三层结构分工合作，但在...</description>
+    <pubDate>Wed, 05 Mar 2025 03:09:46 GMT</pubDate>
   </item><item>
-    <title>Markdown Syntax</title>
-    <link>https://q3yi.me/Quick-References/Markdown-Syntax</link>
-    <guid>https://q3yi.me/Quick-References/Markdown-Syntax</guid>
-    <description>基本语法 标题 (Heading) # h1 ## h2 ### h3 head level 1 ============ head level 2 ------------ 加粗 (Bold) **bold text** __bold text__ 斜体 (Italic) *italicized text* _italicized text_ 引用 (Blockquote) ...</description>
-    <pubDate>Sat, 13 Apr 2024 02:56:20 GMT</pubDate>
+    <title>倾听的力量</title>
+    <link>https://q3yi.github.io/2025/%E5%80%BE%E5%90%AC%E7%9A%84%E5%8A%9B%E9%87%8F</link>
+    <guid>https://q3yi.github.io/2025/%E5%80%BE%E5%90%AC%E7%9A%84%E5%8A%9B%E9%87%8F</guid>
+    <description>《倾听的力量》1 是一本讲如何更好的与人沟通交流的书，作者马克-郭士顿（Mark Goulston）。全书共分为四个部分： 第一部分，书中介绍了沟通说服的过程，将说服过程分为了几个说服周期，为了说服他人，我们在沟通过程中应该时刻注意我们处在说服的哪个阶段，从而正确的选择我们的策略；进一步，作者介绍了在沟通中影响我们的生理结构，利用三脑理论和杏仁核劫持解释了为何我们在沟通中会被情绪控制。而镜像神经元则向读者解释了沟通中产生共情的生理机制，而在后续的章节中我们也会看到如何利用它帮助交流。 第二部分，书中从第一部分的生理机制出发，讲述了构建沟通的九大核心原则，包括： 保持镇定 破处刻板影响 让对方觉...</description>
+    <pubDate>Wed, 05 Mar 2025 02:55:34 GMT</pubDate>
   </item><item>
-    <title>Pacman 常用命令</title>
-    <link>https://q3yi.me/Quick-References/Pacman-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4</link>
-    <guid>https://q3yi.me/Quick-References/Pacman-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4</guid>
-    <description>常用命令 查找软件包： $ pacman -Ss keywords 查询特定软件包的详细信息： $ pacman -Si pkgName1 安装软件包（或者叫同步软件包更合适）： $ pacman -S pkgName1 pkgName2 删除软件包： $ pacman -R pkgName1 pkgName2 删除软件包和其不再被其它软件包依赖的依赖软件包： ...</description>
-    <pubDate>Fri, 05 Apr 2024 02:31:54 GMT</pubDate>
+    <title>说服周期</title>
+    <link>https://q3yi.github.io/2025/%E8%AF%B4%E6%9C%8D%E5%91%A8%E6%9C%9F</link>
+    <guid>https://q3yi.github.io/2025/%E8%AF%B4%E6%9C%8D%E5%91%A8%E6%9C%9F</guid>
+    <description>说服周期1 是成功说服人所需要经过的几个步骤，主要用被说服人的心理变化来划分，分为以下几个阶段： 拒绝去做 愿意倾听 考虑你说的话 愿意去做 付诸实践 感到愉快 继续去做 为了完成整个说服周期，我们需要用打动人的方式进行交谈： 从抗拒到倾听 从倾听到思考 从思考到有意愿 从有意愿到行动 从乐意行动到持之以恒 成功的说服的关键不在与你告诉了对方什么，而是你让对方在说服周期中告诉了你什么，以及整个过程中他们脑海中的所思所想。 Footnotes 《倾听的力量》第一章 ↩ .</description>
+    <pubDate>Wed, 05 Mar 2025 02:54:56 GMT</pubDate>
   </item><item>
-    <title>Moral Lessons from GNU Emacs - Protesilaos</title>
-    <link>https://q3yi.me/Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos</link>
-    <guid>https://q3yi.me/Blogs/Moral-Lessons-from-GNU-Emacs---Protesilaos</guid>
-    <description>Protesilaos 是 Emacs 社区近几年比较活跃的贡献者，开发了好几个比较出名的包，比如高质量的主题 Modus Theme，在 Emacs 28 之后已经被打包进入了 Emacs 中，可以直接使用。还有新的 EF Theme，看着也不错，但因为我自己没有用 Emacs 了，所以没有尝试过。 他包开发的思路也和近几年 Emacs ...</description>
-    <pubDate>Fri, 05 Apr 2024 02:27:48 GMT</pubDate>
+    <title>增广贤文</title>
+    <link>https://q3yi.github.io/2025/%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87</link>
+    <guid>https://q3yi.github.io/2025/%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87</guid>
+    <description>贫居闹市无人问，富在深山有远亲。 谁人背后无人说，哪个人前不说人。 有钱道真语，无钱语不真。 不信且看筵中酒，杯杯先敬有钱人。 来说是非者，便是是非人。 远水难救近火，远亲不如近邻。 有茶有酒多兄弟，急难何曾见一人。 人情似纸张张薄，世事如棋局局新。 力微休负重，言轻莫劝人。 无钱休入众，遭难莫寻亲。 若要断酒法，醒眼看醉人。 求人须求大丈夫，济人须济急时无。 渴时一滴如甘露，醉后添杯不如无。 久住令人贱，频来亲也疏。 酒中不语真君子，财上分明大丈夫。 积金千两，不如明辨经书。 养子不教如养驴，养女不教如养猪。 有田不耕仓禀虚，有书不读子孙愚。 水太清则无鱼，人至察则无徒。 是非终有日，不听自...</description>
+    <pubDate>Tue, 04 Mar 2025 04:55:52 GMT</pubDate>
   </item><item>
-    <title>Windows 开机端口被随机占用的原因与修复</title>
-    <link>https://q3yi.me/Blogs/Windows-%E5%BC%80%E6%9C%BA%E7%AB%AF%E5%8F%A3%E8%A2%AB%E9%9A%8F%E6%9C%BA%E5%8D%A0%E7%94%A8%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B8%8E%E4%BF%AE%E5%A4%8D</link>
-    <guid>https://q3yi.me/Blogs/Windows-%E5%BC%80%E6%9C%BA%E7%AB%AF%E5%8F%A3%E8%A2%AB%E9%9A%8F%E6%9C%BA%E5%8D%A0%E7%94%A8%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B8%8E%E4%BF%AE%E5%A4%8D</guid>
-    <description>一个奇怪的问题 在用 Windows 的时候遇到一个特别烦躁的 bug，有些需要绑定端口的程序老是启动不了，比如 Clash，Wezterm，查询程序的启动日志，发现是无法绑定端口，程序有时会提示是端口已经被使用，所以考虑去手动把占用端口的程序关掉，但是使用 netstat -ano|findstr &quot;&lt;port&gt;&quot; ...</description>
-    <pubDate>Sat, 06 Jan 2024 05:42:00 GMT</pubDate>
+    <title>Bellman-Ford 算法</title>
+    <link>https://q3yi.github.io/2025/Bellman-Ford-%E7%AE%97%E6%B3%95</link>
+    <guid>https://q3yi.github.io/2025/Bellman-Ford-%E7%AE%97%E6%B3%95</guid>
+    <description>Bellman-Ford 算法1 同 Dijkstra 最短路径算法一样是求解带权有向无环图中从一个源节点到目标节点的最短路径问题。不同与 Dijkstra 每次取最近的点进入集合再更新距离，Bellman-Ford 算法每次都是循环所有的边，更新所有边的终点距离，有点类似与 BFS，Bellman-Ford 从源节点一圈一圈的向外更新。优点是算法可以处理负数权重的边，缺点是时间复杂度高于 Dijkstra 最短路径算法。 其大概过程用伪码表示： procedure BellmanFord(list vertices, list edges, vertex source) // 讀入邊和節點的...</description>
+    <pubDate>Fri, 03 Jan 2025 10:18:10 GMT</pubDate>
   </item><item>
-    <title>ViFM Cheatsheet</title>
-    <link>https://q3yi.me/Quick-References/ViFM-Cheatsheet</link>
-    <guid>https://q3yi.me/Quick-References/ViFM-Cheatsheet</guid>
-    <description>Vifm 是一个终端文件管理软件，其按键基本可以和 vim 是使用逻辑相对应。 .</description>
-    <pubDate>Sat, 25 Nov 2023 01:02:00 GMT</pubDate>
+    <title>Dijkstra 最短路径算法</title>
+    <link>https://q3yi.github.io/2025/Dijkstra-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95</link>
+    <guid>https://q3yi.github.io/2025/Dijkstra-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95</guid>
+    <description>Dijkstra 最短路径算法1 是用于查找带权有向图中两点最短路径的算法，也可以用来从一个节点出发，找寻到图中所有其它节点的最短路径的问题。其核心其实和最小生成树中的Prime 算法类似，是一个贪心算法。 特别注意 Dijkstra 算法并不能适用于有负数权重边的图，对于用负数权重的边，可以使用 Bellman-Ford 算法 其主要的算法过程如下： 将所有的节点分成两个集合，“已确定节点” 和 “未确定节点” （算法开始时，”已确定节点” 集合只包含起始节点）。 算法开始后，每次从 “未确定节点” 的集合中找到离 “已确定节点” 最近的节点，将其加入到 “已确定节点” 集合，并且更新 “未...</description>
+    <pubDate>Wed, 01 Jan 2025 09:05:06 GMT</pubDate>
   </item>
     </channel>
   </rss>
