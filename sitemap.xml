@@ -185,6 +185,9 @@
     <loc>https://q3yi.github.io/2024/Golang-Internal-Package</loc>
     <lastmod>2024-04-14T08:44:54.000Z</lastmod>
   </url><url>
+    <loc>https://q3yi.github.io/2024/Golang-Map</loc>
+    <lastmod>2024-04-15T09:57:36.000Z</lastmod>
+  </url><url>
     <loc>https://q3yi.github.io/2024/Golang-Name-Convention</loc>
     <lastmod>2024-04-14T08:49:04.000Z</lastmod>
   </url><url>
@@ -251,6 +254,12 @@
     <loc>https://q3yi.github.io/2024/System-Latency</loc>
     <lastmod>2024-07-24T03:44:39.000Z</lastmod>
   </url><url>
+    <loc>https://q3yi.github.io/2024/TCP-Connection-Termination</loc>
+    <lastmod>2024-01-18T13:37:50.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.github.io/2024/TCP-Handshake</loc>
+    <lastmod>2024-01-20T13:12:25.000Z</lastmod>
+  </url><url>
     <loc>https://q3yi.github.io/2024/TCP-Segment-Structure</loc>
     <lastmod>2024-01-18T02:07:00.000Z</lastmod>
   </url><url>
@@ -308,6 +317,9 @@
     <loc>https://q3yi.github.io/2025/%E5%80%BE%E5%90%AC%E7%9A%84%E5%8A%9B%E9%87%8F</loc>
     <lastmod>2025-03-05T02:55:34.000Z</lastmod>
   </url><url>
+    <loc>https://q3yi.github.io/2025/%E5%88%86%E5%B8%83%E5%BC%8F-CAP-%E7%90%86%E8%AE%BA</loc>
+    <lastmod>2025-03-26T14:30:17.000Z</lastmod>
+  </url><url>
     <loc>https://q3yi.github.io/2025/%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87</loc>
     <lastmod>2025-03-04T04:55:52.000Z</lastmod>
   </url><url>
@@ -325,6 +337,12 @@
   </url><url>
     <loc>https://q3yi.github.io/2025/%E9%95%9C%E5%83%8F%E7%A5%9E%E7%BB%8F%E5%85%83</loc>
     <lastmod>2025-03-05T05:00:54.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.github.io/2025/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1</loc>
+    <lastmod>2025-04-06T03:07:42.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.github.io/2025/%E9%AB%98%E5%B9%B6%E5%8F%91%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1</loc>
+    <lastmod>2025-03-30T07:18:29.000Z</lastmod>
   </url><url>
     <loc>https://q3yi.github.io/Blogs/Emacs-%E4%B8%AD%E8%8B%B1%E6%96%87%E7%9A%84%E5%AF%B9%E9%BD%90%E8%AE%BE%E7%BD%AE</loc>
     <lastmod>2021-12-18T03:24:07.000Z</lastmod>
@@ -355,6 +373,9 @@
   </url><url>
     <loc>https://q3yi.github.io/Blogs/%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2</loc>
     <lastmod>2020-12-03T12:31:20.000Z</lastmod>
+  </url><url>
+    <loc>https://q3yi.github.io/Quick-References/ACM-Code-Of-Ethics</loc>
+    <lastmod>2025-04-06T03:47:32.000Z</lastmod>
   </url><url>
     <loc>https://q3yi.github.io/Quick-References/Editor-Config-File</loc>
     <lastmod>2024-04-15T07:38:52.000Z</lastmod>

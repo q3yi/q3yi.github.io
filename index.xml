@@ -6,6 +6,30 @@
       <description>最近的10条笔记 on 🧠 Punk Records</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>ACM Code Of Ethics</title>
+    <link>https://q3yi.github.io/Quick-References/ACM-Code-Of-Ethics</link>
+    <guid>https://q3yi.github.io/Quick-References/ACM-Code-Of-Ethics</guid>
+    <description>序言 计算专业人员的行为改变世界。他们应反思其工作的广泛影响，始终如一支持公众利益，才能负责任地行事。计算机协会道德与职业行为准则（下称“准则”）体现了行业良知。 本《准则》旨在激励和指导包括现有和胸怀抱负的从业者、教师、学生、影响者以及任何以有影响力的方式使用计算技术的人士等所有计算专业人员的道德行为。此外，本《准则》亦可作为发生违规行为时的补救措施依据。基于了解公众利益始终是首要考虑因素，本《准则》包括作为责任声明制定的原则。每项原则都辅以诠释指南，以帮助计算专业人员理解和应用该原则。 第 1 节阐述了奠定本《准则》其余部分基础的基本道德原则。第 2 节阐明了专业责任的其他更具体的考虑因素...</description>
+    <pubDate>Sun, 06 Apr 2025 03:47:32 GMT</pubDate>
+  </item><item>
+    <title>领域驱动设计</title>
+    <link>https://q3yi.github.io/2025/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1</link>
+    <guid>https://q3yi.github.io/2025/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1</guid>
+    <description>领域驱动设计（Domain-Driven Design, DDD） 简单来讲就是同过业务逻辑的边界来划分模块，通过定义领域事件和明确的交互方式实现模块之间的低耦合协作。 DDD 的核心概念 领域（Domain） 指业务问题的范围，即软件要解决的实际问题所处的领域（如电商、金融、物流等）。DDD 强调开发者需要深入理解业务，而非仅关注技术实现。 通用语言（Ubiquitous Language） 开发团队与业务专家共同定义一套统一的术语和概念，确保代码、文档、沟通中使用相同的语言，减少歧义。 限界上下文（Bounded Context） 将大系统划分为明确的边界，每个边界内使用独立的通用语言和模...</description>
+    <pubDate>Sun, 06 Apr 2025 03:07:42 GMT</pubDate>
+  </item><item>
+    <title>高并发数据库优化设计</title>
+    <link>https://q3yi.github.io/2025/%E9%AB%98%E5%B9%B6%E5%8F%91%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1</link>
+    <guid>https://q3yi.github.io/2025/%E9%AB%98%E5%B9%B6%E5%8F%91%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1</guid>
+    <description>反范式设计 将一些冗余字段存在多个表中，这样在查询时可以避免关联多个表，以提高查询的性能。 在更新时，如果需要一个表先查出一个 ID 再去更新另一张表，这样更新的事务会变大，而冗余一些更新条件的字段在表中，就可以进行单表更新。但如果更新这个条件字段是个高频操作，更新时需要同时更新两张表，那就需要仔细权衡。 不要设置外键 对有外键的数据进行更新，本身需要做额外的检查，也有可能需要加锁，这对于更新的性能是有影响的。所以不在数据库中设置外键，而是在业务层面去保证外键的逻辑。 增加字段的扩展性 对于业务上可能会增加删除字段的的情况，很难在一开始就能定义到所有需要的字段，所以可以考虑使用字符串或 JSO...</description>
+    <pubDate>Sun, 30 Mar 2025 07:18:29 GMT</pubDate>
+  </item><item>
+    <title>分布式 CAP 理论</title>
+    <link>https://q3yi.github.io/2025/%E5%88%86%E5%B8%83%E5%BC%8F-CAP-%E7%90%86%E8%AE%BA</link>
+    <guid>https://q3yi.github.io/2025/%E5%88%86%E5%B8%83%E5%BC%8F-CAP-%E7%90%86%E8%AE%BA</guid>
+    <description>CAP 原则是分布式系统设计中的一个核心理论，由 Eric Brewer 提出，指出在分布式系统中，一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance）这三个特性无法同时满足，最多只能实现其中的两个。 CAP 原则的三个要素： 一致性（Consistency）： 所有节点在同一时间看到的数据是相同的。 系统在执行写操作后，任何后续的读操作都能获得最新的数据。 可用性（Availability）： 每个请求都能得到响应，无论成功或失败。 系统在部分节点故障时仍能正常处理请求。 分区容错性（Partition tolerance...</description>
+    <pubDate>Wed, 26 Mar 2025 14:30:17 GMT</pubDate>
+  </item><item>
     <title>建立沟通的12种快速方法</title>
     <link>https://q3yi.github.io/2025/%E5%BB%BA%E7%AB%8B%E6%B2%9F%E9%80%9A%E7%9A%8412%E7%A7%8D%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95</link>
     <guid>https://q3yi.github.io/2025/%E5%BB%BA%E7%AB%8B%E6%B2%9F%E9%80%9A%E7%9A%8412%E7%A7%8D%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95</guid>
@@ -41,30 +65,6 @@
     <guid>https://q3yi.github.io/2025/%E5%80%BE%E5%90%AC%E7%9A%84%E5%8A%9B%E9%87%8F</guid>
     <description>《倾听的力量》1 是一本讲如何更好的与人沟通交流的书，作者马克-郭士顿（Mark Goulston）。全书共分为四个部分： 第一部分，书中介绍了沟通说服的过程，将说服过程分为了几个说服周期，为了说服他人，我们在沟通过程中应该时刻注意我们处在说服的哪个阶段，从而正确的选择我们的策略；进一步，作者介绍了在沟通中影响我们的生理结构，利用三脑理论和杏仁核劫持解释了为何我们在沟通中会被情绪控制。而镜像神经元则向读者解释了沟通中产生共情的生理机制，而在后续的章节中我们也会看到如何利用它帮助交流。 第二部分，书中从第一部分的生理机制出发，讲述了构建沟通的九大核心原则，包括： 保持镇定 破处刻板影响 让对方觉...</description>
     <pubDate>Wed, 05 Mar 2025 02:55:34 GMT</pubDate>
-  </item><item>
-    <title>说服周期</title>
-    <link>https://q3yi.github.io/2025/%E8%AF%B4%E6%9C%8D%E5%91%A8%E6%9C%9F</link>
-    <guid>https://q3yi.github.io/2025/%E8%AF%B4%E6%9C%8D%E5%91%A8%E6%9C%9F</guid>
-    <description>说服周期1 是成功说服人所需要经过的几个步骤，主要用被说服人的心理变化来划分，分为以下几个阶段： 拒绝去做 愿意倾听 考虑你说的话 愿意去做 付诸实践 感到愉快 继续去做 为了完成整个说服周期，我们需要用打动人的方式进行交谈： 从抗拒到倾听 从倾听到思考 从思考到有意愿 从有意愿到行动 从乐意行动到持之以恒 成功的说服的关键不在与你告诉了对方什么，而是你让对方在说服周期中告诉了你什么，以及整个过程中他们脑海中的所思所想。 Footnotes 《倾听的力量》第一章 ↩ .</description>
-    <pubDate>Wed, 05 Mar 2025 02:54:56 GMT</pubDate>
-  </item><item>
-    <title>增广贤文</title>
-    <link>https://q3yi.github.io/2025/%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87</link>
-    <guid>https://q3yi.github.io/2025/%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87</guid>
-    <description>贫居闹市无人问，富在深山有远亲。 谁人背后无人说，哪个人前不说人。 有钱道真语，无钱语不真。 不信且看筵中酒，杯杯先敬有钱人。 来说是非者，便是是非人。 远水难救近火，远亲不如近邻。 有茶有酒多兄弟，急难何曾见一人。 人情似纸张张薄，世事如棋局局新。 力微休负重，言轻莫劝人。 无钱休入众，遭难莫寻亲。 若要断酒法，醒眼看醉人。 求人须求大丈夫，济人须济急时无。 渴时一滴如甘露，醉后添杯不如无。 久住令人贱，频来亲也疏。 酒中不语真君子，财上分明大丈夫。 积金千两，不如明辨经书。 养子不教如养驴，养女不教如养猪。 有田不耕仓禀虚，有书不读子孙愚。 水太清则无鱼，人至察则无徒。 是非终有日，不听自...</description>
-    <pubDate>Tue, 04 Mar 2025 04:55:52 GMT</pubDate>
-  </item><item>
-    <title>Bellman-Ford 算法</title>
-    <link>https://q3yi.github.io/2025/Bellman-Ford-%E7%AE%97%E6%B3%95</link>
-    <guid>https://q3yi.github.io/2025/Bellman-Ford-%E7%AE%97%E6%B3%95</guid>
-    <description>Bellman-Ford 算法1 同 Dijkstra 最短路径算法一样是求解带权有向无环图中从一个源节点到目标节点的最短路径问题。不同与 Dijkstra 每次取最近的点进入集合再更新距离，Bellman-Ford 算法每次都是循环所有的边，更新所有边的终点距离，有点类似与 BFS，Bellman-Ford 从源节点一圈一圈的向外更新。优点是算法可以处理负数权重的边，缺点是时间复杂度高于 Dijkstra 最短路径算法。 其大概过程用伪码表示： procedure BellmanFord(list vertices, list edges, vertex source) // 讀入邊和節點的...</description>
-    <pubDate>Fri, 03 Jan 2025 10:18:10 GMT</pubDate>
-  </item><item>
-    <title>Dijkstra 最短路径算法</title>
-    <link>https://q3yi.github.io/2025/Dijkstra-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95</link>
-    <guid>https://q3yi.github.io/2025/Dijkstra-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95</guid>
-    <description>Dijkstra 最短路径算法1 是用于查找带权有向图中两点最短路径的算法，也可以用来从一个节点出发，找寻到图中所有其它节点的最短路径的问题。其核心其实和最小生成树中的Prime 算法类似，是一个贪心算法。 特别注意 Dijkstra 算法并不能适用于有负数权重边的图，对于用负数权重的边，可以使用 Bellman-Ford 算法 其主要的算法过程如下： 将所有的节点分成两个集合，“已确定节点” 和 “未确定节点” （算法开始时，”已确定节点” 集合只包含起始节点）。 算法开始后，每次从 “未确定节点” 的集合中找到离 “已确定节点” 最近的节点，将其加入到 “已确定节点” 集合，并且更新 “未...</description>
-    <pubDate>Wed, 01 Jan 2025 09:05:06 GMT</pubDate>
   </item>
     </channel>
   </rss>
